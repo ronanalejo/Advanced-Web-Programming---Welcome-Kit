@@ -22,47 +22,102 @@
             <h2>Hello!</h2>
             <div class="user-info">
                 <form id="nameForm">
-                    <label for="nameInput">Enter your full name: </label>
+                    <label for="nameInput">Enter your Full Name: </label>
                     <input type="text" id="nameInput" name="nameInput" required>
                     <button type="submit">Submit</button>
                 </form>
+                
+                <label for="yearLevel">Year Level:</label>
+        <select id="yearLevel" onchange="updateCourses()">
+            <option value="">Select Year Level</option>
+            <option value="shs">Senior High School</option>
+            <option value="college">College</option>
+        </select>
 
-                <form id="school-course">
-                    <label placeholder="egrsergs" for="school-course-select">Courses: </label>
-                    <select id="school-course-select">
-                        <optgroup label="School Of Computing (SOC)">
-                            <option value="SOC">Software Engineering</option>
-                            <option value="SOC">Cloud Engineering</option>
-                            <option value="SOC">Web Development</option>
-                            <option value="SOC">Game Development</option>
-                            <option value="SOC">Data Science</option>
-                        </optgroup>
-                  
-                        <optgroup label="School Of Design and Arts (SODA)">
-                            <option value="SODA">Multimedia Arts</option>
-                            <option value="SODA">Fashion Design</option>
-                            <option value="SODA">Animation</option>
-                            <option value="SODA">Music Production</option>
-                            <option value="SODA">Film and Visual Effects</option>
-                        </optgroup>
+        <label for="courses">Courses:</label>
+        <select id="courses">
+            <option value="">Select Course</option>
+        </select>
 
-                        <optgroup label="School of Business and Liberal Arts">
-                            <option value="SBLA">Marketing Management</option>
-                            <option value="SBLA">E-Management</option>
-                            <option value="SBLA">Real Estate Management</option>
-                            <option value="SBLA">Psychology</option>
-                            <option value="SBLA">Accountancy</option>
-                        </optgroup>
-        
-    
-    
-                    </select>
-                </form>
+        <script>
+            const shsCourses = [
+                { value: 'shs-abm', text: 'Accountancy, Business and Management' },
+                { value: 'shs-ani', text: 'Animation' },
+                { value: 'shs-artsDesign', text: 'Arts and Design' },
+                { value: 'shs-audoProd', text: 'Audio Production' },
+                { value: 'shs-sd', text: 'Software Development' },
+                { value: 'shs-fd', text: 'Fashion Design' },
+                { value: 'shs-graphIllu', text: 'Graphic Illustration' },
+                { value: 'shs-humss', text: 'Humanities and Social Sciences' },
+                { value: 'shs-robotics', text: 'Robotics' }
+            ];
+
+            const collegeCourses = [
+                {
+                    label: 'School Of Computing (SOC)',
+                    options: [
+                        { value: 'SOC-software', text: 'Software Engineering' },
+                        { value: 'SOC-cloud', text: 'Cloud Engineering' },
+                        { value: 'SOC-web', text: 'Web Development' },
+                        { value: 'SOC-game', text: 'Game Development' },
+                        { value: 'SOC-data', text: 'Data Science' }
+                    ]
+                },
+                {
+                    label: 'School Of Design and Arts (SODA)',
+                    options: [
+                        { value: 'SODA-multimedia', text: 'Multimedia Arts' },
+                        { value: 'SODA-fashion', text: 'Fashion Design' },
+                        { value: 'SODA-animation', text: 'Animation' },
+                        { value: 'SODA-music', text: 'Music Production' },
+                        { value: 'SODA-film', text: 'Film and Visual Effects' }
+                    ]
+                },
+                {
+                    label: 'School of Business and Liberal Arts',
+                    options: [
+                        { value: 'SBLA-marketing', text: 'Marketing Management' },
+                        { value: 'SBLA-e-management', text: 'E-Management' },
+                        { value: 'SBLA-real-estate', text: 'Real Estate Management' },
+                        { value: 'SBLA-psychology', text: 'Psychology' },
+                        { value: 'SBLA-accountancy', text: 'Accountancy' }
+                    ]
+                }
+            ];
+
+            function updateCourses() {
+                const yearLevel = document.getElementById('yearLevel').value;
+                const coursesSelect = document.getElementById('courses');
+
+                coursesSelect.innerHTML = '<option value="">Select Course</option>';
+
+                if (yearLevel === 'shs') {
+                    shsCourses.forEach(course => {
+                        const option = document.createElement('option');
+                        option.value = course.value;
+                        option.textContent = course.text;
+                        coursesSelect.add(option);
+                    });
+                } else if (yearLevel === 'college') {
+                    collegeCourses.forEach(group => {
+                        const optgroup = document.createElement('optgroup');
+                        optgroup.label = group.label;
+                        group.options.forEach(course => {
+                            const option = document.createElement('option');
+                            option.value = course.value;
+                            option.textContent = course.text;
+                            optgroup.appendChild(option);
+                        });
+                        coursesSelect.appendChild(optgroup);
+                    });
+                }
+            }
+        </script>
             </div>
         </section>
 
         <section id="content" style="display:none;">
-            <h2>Welcome to iACADEMY</h2>
+            <h2 id="welcomeMessage"></h2>
             <p id="personalizedMessage"></p>
             <!-- Other sections like About, Campus, etc. will be included here -->
           </section>
