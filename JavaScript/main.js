@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const userName = localStorage.getItem('userName');
 
     if (userName) {
-        elementUserName.innerHTML = `Hello ${userName}`;
+        elementUserName.innerHTML = `Hello Game Changer ${userName}!`;
     }
 
     // Nav bar scroll behavior
@@ -52,3 +52,21 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+
+let sections = document.querySelectorAll('section');
+
+window.onscroll = () => {
+    sections.forEach(sec => {
+        let top = window.scrollY;
+        let offset = sec.offsetTop - 750;
+        let height = sec.offsetHeight;
+
+        if (top >= offset && top < offset + height) {
+            sec.classList.add('show-animate');
+        }
+        else {
+            sec.classList.remove('show-animate');
+        }
+    })
+}

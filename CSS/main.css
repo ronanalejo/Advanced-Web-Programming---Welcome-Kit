@@ -23,6 +23,7 @@ html {
 body {
     font-family: 'Radio Canada Big', sans-serif;
     background-color: var(--background-color);
+    transition: background-color 0.3s;
 }
 
 /* NORMAL STYLES */
@@ -39,6 +40,7 @@ body {
     max-width: auto;
     margin: 0 auto;
     padding: 0 175px;
+    transition: background-color 0.3s;
 }
 
 .logo {
@@ -70,11 +72,12 @@ body {
 }
 
 .nav-link:hover {
-    color: #000000;
+    color: var(--hover-nav);
 }
 
 .active {
     color: var(--active-color);
+    transition: text-color 0.3s, color 0.3s;
 }
 
 .main {
@@ -95,40 +98,48 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
+    color: var(--text-color);
+    transition: color 0.3s;
 }
 
 .section:nth-child(1){
-    background-color: #d4d6e1;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-color: var(--s1-bg-color);
+    transition: background-color 0.5s;
 }
 
 .section:nth-child(2){
-    background-color: #d4d6e1;
+    background-color: var(--s2-bg-color);
+    transition: background-color 0.5s;
 }
 
 .section:nth-child(3){
-    background-color: #bec2d3;
+    background-color: var(--s3-bg-color);
+    transition: background-color 0.5s;
 }
 
 .section:nth-child(4){
-    background-color: #a8aec4;
+    background-color: var(--s4-bg-color);
+    transition: background-color 0.5s;
 }
 
 .section:nth-child(5){
-    background-color: #939ab5;
+    background-color: var(--s5-bg-color);
+    transition: background-color 0.5s;
 }
 
 .section:nth-child(6){
-    background-color: #7d85a6;
+    background-color: var(--s6-bg-color);
+    transition: background-color 0.5s;
 }
 
 .section:nth-child(7){
-    background-color: #677197;
+    background-color: var(--s7-bg-color);
+    transition: background-color 0.5s;
 }
 
 .section:nth-child(8){
-    background-color: #515d89;
+    background-color: var(--s8-bg-color);
+    transition: background-color 0.5s;
 }
 
 .footer{
@@ -141,6 +152,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: background-color 0.3s;
 }
 
 :root {
@@ -149,16 +161,34 @@ body {
     --header-background: rgb(255, 255, 255, 0.8);
     --header-text: #515d89;
     --section-background: #fff;
+    --hover-nav: #000000;
     --active-color: #000000;
+    --s1-bg-color: #e9ebf0;
+    --s2-bg-color: #d4d6e1;
+    --s3-bg-color: #bec2d3;
+    --s4-bg-color: #a8aec4;
+    --s5-bg-color: #939ab5;
+    --s6-bg-color: #7d85a6;
+    --s7-bg-color: #677197;
+    --s8-bg-color: #515d89;
   }
 
   [data-theme="dark"] {
-    --background-color: #333;
+    --background-color: #111;
     --text-color: #f0f0f0;
-    --header-background: #111;
+    --header-background: rgb(0,0,0,0.5);
     --header-text: #f0f0f0;
     --section-background: #444;
-    --active-color: #515d89;
+    --hover-nav: #26346b;
+    --active-color: #26346b;
+    --s1-bg-color: #0b1020;
+    --s2-bg-color: #0f152b;
+    --s3-bg-color: #131a36;
+    --s4-bg-color: #171f40;
+    --s5-bg-color: #1b244b;
+    --s6-bg-color: #1e2a56;
+    --s7-bg-color: #222f60;
+    --s8-bg-color: #26346b;
   }
   /* Darkmode Switch */
   .switch [data-theme="dark"] {
@@ -224,4 +254,35 @@ body {
   input:checked + .slider:before {
     transform: translateX(26px);
   }
-  
+
+.animate{
+    transition: 1s;
+}
+
+.section .animate {
+    transition: 1s;
+}
+
+.section:nth-child(1){
+    background-color: var(--s1-bg-color);
+}
+
+.section:nth-child(1) .animate{
+    transform: scale(.7);
+}
+
+.section:nth-child(1).show-animate .animate{
+    transform: scale(1);
+}
+
+.h1-home {
+    font-size: 65px;
+}
+
+.h3-home {
+    font-size: 30px;
+}
+
+.h4-home {
+    font-size: 25px;
+}
