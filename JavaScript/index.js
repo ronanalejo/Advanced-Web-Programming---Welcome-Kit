@@ -108,4 +108,24 @@ document.addEventListener('DOMContentLoaded', function() {
   yearLevel.addEventListener('change', updateCourses);
   courses.addEventListener('change', validateForm);
   
+  nameForm.addEventListener('submit', function(event) {
+    if (!nameInput.value || !yearLevel.value || !courses.value) {
+        event.preventDefault();
+        errorMessage.style.display = 'block';
+    } else {
+        event.preventDefault();
+        errorMessage.style.display = 'none';
+        const userName = nameInput.value;
+        const userYearLevel = yearLevel.options[yearLevel.selectedIndex].text;
+        const userCourse = courses.options[courses.selectedIndex].text;
+
+        // Store user data in local storage
+        localStorage.setItem('userName', userName);
+        localStorage.setItem('userYearLevel', userYearLevel);
+        localStorage.setItem('userCourse', userCourse);
+
+        // Redirect to main.html
+        window.location.href = 'main.html';
+    }
+});
 });

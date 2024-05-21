@@ -1,18 +1,33 @@
-const navLinkEls = document.querySelectorAll('.nav-link');
-const sectionEls = document.querySelectorAll('.section');
+document.addEventListener('DOMContentLoaded', function() {
+    const welcomeHeading = document.getElementById('welcomeHeading');
+    const userDetails = document.getElementById('userDetails');
 
-let currentSection = 'home';
-window.addEventListener('scroll', () => {
-    sectionEls.forEach(sectionEl => {
-        if (window.scrollY >= (sectionEl.offsetTop - 350)) {
-            currentSection = sectionEl.id;
-        }
-    });
+    const userName = localStorage.getItem('userName');
+    const userYearLevel = localStorage.getItem('userYearLevel');
+    const userCourse = localStorage.getItem('userCourse');
 
-    navLinkEls.forEach(navLinkEl => {
-        if (navLinkEl.href.includes(currentSection)) {
-            document.querySelector('.active').classList.remove('active');
-            navLinkEl.classList.add('active');
-        }
+    if (userName && userYearLevel && userCourse) {
+        welcomeHeading.innerHTML = `Welcome Game Changer, ${userName}<br>`;
+        userDetails.textContent = `${userYearLevel}, ${userCourse}`;
+    }
+
+    const navLinkEls = document.querySelectorAll('.nav-link');
+    const sectionEls = document.querySelectorAll('.section');
+
+    let currentSection = 'home';
+    window.addEventListener('scroll', () => {
+        sectionEls.forEach(sectionEl => {
+            if (window.scrollY >= (sectionEl.offsetTop - 350)) {
+                currentSection = sectionEl.id;
+            }
+        });
+
+        navLinkEls.forEach(navLinkEl => {
+            if (navLinkEl.href.includes(currentSection)) {
+                document.querySelector('.active').classList.remove('active');
+                navLinkEl.classList.add('active');
+            }
+        });
     });
+    
 });
