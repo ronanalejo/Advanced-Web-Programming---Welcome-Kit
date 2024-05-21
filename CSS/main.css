@@ -76,6 +76,38 @@ body {
 
 .section
 {
-
+    height: 100vh;
     
+}
+
+.section:nth-child(1){
+    background-color: #e9ebf0;
+}
+
+.section:nth-child(2){
+    background-color: #d4d6e1;
+}
+
+.section:nth-child(3){
+    background-color: #bec2d3;
+}
+
+.section:nth-child(4){
+    background-color: #a8aec4;
+}
+
+.section:nth-child(5){
+    background-color: #939ab5;
+}
+
+.section:nth-child(6){
+    background-color: #7d85a6;
+}
+
+.section:nth-child(7){
+    background-color: #677197;
+}
+
+.section:nth-child(8){
+    background-color: #515d89;
 }
