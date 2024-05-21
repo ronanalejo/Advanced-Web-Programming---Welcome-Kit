@@ -1,3 +1,13 @@
+<<<<<<< HEAD
+nameForm.addEventListener('submit', function(event) {
+    event.preventDefault();
+    const userName = nameInput.value;
+    welcomeMessage.textContent = `Welcome to iACADEMY ${userName}!`;
+    personalizedMessage.textContent = `Hi ${userName}! Welcome to your game-changing journey at iACADEMY.`;
+    welcomeSection.style.display = 'none';
+    contentSection.style.display = 'block';
+  });
+=======
 document.addEventListener('DOMContentLoaded', function() {
     const welcomeHeading = document.getElementById('welcomeHeading');
     const userDetails = document.getElementById('userDetails');
@@ -31,3 +41,4 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
 });
+>>>>>>> bdbce5599d7cc5e63b7b68597db5182c70d27027
