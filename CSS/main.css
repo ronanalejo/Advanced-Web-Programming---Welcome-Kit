@@ -1,51 +1,62 @@
-html {
-    scroll-behavior:smooth;
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.topnav {
-    background-color: #0044cc;
-    overflow: hidden;
-  }
-
-.topnav a {
-    float: left;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 16px;
+a {
     text-decoration: none;
-    font-size: 17px;
+    color: inherit;
 }
 
-/* TOP NAV HOVER & ACTIVE */
-/*
-.topnav a:hover {
-background-color: #ddd;
-color: black;
-}
-  
-.topnav a.active {
-background-color: #04AA6D;
-color: white;
-}
-*/
-
-.home{
-    height: 500px;
-    text-align: center;
-    padding: 400px;
-    margin: 50px;
+ul {
+    list-style: none;
 }
 
-.about{
-    height: 500px;
-    text-align: center;
-    padding: 400px;
-    margin: 50px;
+/* BASE STYLES */
+body {
+    font-family: 'Radio Canada Big', sans-serif;
+    background-color: #e8f0f7;
 }
 
-.campus{
-    height: 500px;
-    text-align: center;
-    padding: 400px;
-    margin: 50px;
+/* NORMAL STYLES */
+.header {
+    background-color: rgb(255, 255, 255);
+}
+
+.header-content{
+
+}
+
+.logo {
+
+}
+
+.logo-img {
+
+}
+
+.nav {
+
+}
+
+.nav-list {
+
+}
+
+.nav-item {
+
+}
+
+.nav-link {
+
+}
+
+.main {
+
+}
+
+.heading {
+
 }
