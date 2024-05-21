@@ -20,11 +20,45 @@
     <main>
         <section id="welcome">
             <h2>Hello!</h2>
-            <form id="nameForm">
-                <label for="nameInput">Enter your full name: </label>
-                <input type="text" id="nameInput" name="nameInput" required>
-                <button type="submit">Submit</button>
-            </form>
+            <div class="user-info">
+                <form id="nameForm">
+                    <label for="nameInput">Enter your full name: </label>
+                    <input type="text" id="nameInput" name="nameInput" required>
+                    <button type="submit">Submit</button>
+                </form>
+
+                <form id="school-course">
+                    <label placeholder="egrsergs" for="school-course-select">Courses: </label>
+                    <select id="school-course-select">
+                        <optgroup label="School Of Computing (SOC)">
+                            <option value="SOC">Software Engineering</option>
+                            <option value="SOC">Cloud Engineering</option>
+                            <option value="SOC">Web Development</option>
+                            <option value="SOC">Game Development</option>
+                            <option value="SOC">Data Science</option>
+                        </optgroup>
+                  
+                        <optgroup label="School Of Design and Arts (SODA)">
+                            <option value="SODA">Multimedia Arts</option>
+                            <option value="SODA">Fashion Design</option>
+                            <option value="SODA">Animation</option>
+                            <option value="SODA">Music Production</option>
+                            <option value="SODA">Film and Visual Effects</option>
+                        </optgroup>
+
+                        <optgroup label="School of Business and Liberal Arts">
+                            <option value="SBLA">Marketing Management</option>
+                            <option value="SBLA">E-Management</option>
+                            <option value="SBLA">Real Estate Management</option>
+                            <option value="SBLA">Psychology</option>
+                            <option value="SBLA">Accountancy</option>
+                        </optgroup>
+        
+    
+    
+                    </select>
+                </form>
+            </div>
         </section>
 
         <section id="content" style="display:none;">
