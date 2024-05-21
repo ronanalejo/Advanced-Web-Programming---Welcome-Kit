@@ -3,37 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index</title>
+    <title>SY2024-Welcome Kit</title>
+    <link rel="stylesheet" href="./CSS/index.css">
 </head>
 
 <body>
-    <!-- First Section -->
-    <section class="first-section">
-        <div class="container1">
+    <header>
+        <h1>Welcome to iACADEMY, </h1>
+        <label class="switch">
+            <input type="checkbox" id="modeSwitch">
+            <span class="slider round"></span>
+        </label>
+    </header>
 
-        </div>
-    </section>
+    <main>
+        <section id="welcome">
+            <h2>Hello!</h2>
+            <form id="nameForm">
+                <label for="nameInput">Enter your full name: </label>
+                <input type="text" id="nameInput" name="nameInput" required>
+                <button type="submit">Submit</button>
+            </form>
+        </section>
 
-    <!-- Second Section -->
-    <section class="second-section">
-        
-    </section>
+        <section id="content" style="display:none;">
+            <h2>Welcome to iACADEMY</h2>
+            <p id="personalizedMessage"></p>
+            <!-- Other sections like About, Campus, etc. will be included here -->
+          </section>
+    </main>
 
-    <!-- Third Section -->
-    <section class="third-section">
+    <footer>
+        <p>&copy; SY2024 Welcome Kit by Group 2. All rights reserved.</p>
+    </footer>
 
-    </section>
-
-    <!-- Fourst Section -->
-    <section class="fourth-section">
-
-    </section>
-
-    <!-- Fifth Section -->
-    <section class="fifth-section">
-
-    </section>
-<!-- AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA -->
+    <script src="./JavaScript/index.js"></script>
 </body>
 
 </html>
