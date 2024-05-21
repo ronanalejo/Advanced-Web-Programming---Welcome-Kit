@@ -37,9 +37,9 @@ body {
   }
 
   :root {
-    --background-color: #f0f0f0;
+    --background-color: #e8f0f7;
     --text-color: #333;
-    --header-background: #0044cc;
+    --header-background: #26346b;
     --header-text: #fff;
     --section-background: #fff;
   }
