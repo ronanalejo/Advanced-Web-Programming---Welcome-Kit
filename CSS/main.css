@@ -127,3 +127,15 @@ body {
 .section:nth-child(8){
     background-color: #515d89;
 }
+
+.footer{
+    background-color: rgb(255, 255, 255, 0.8);
+    color: #515d89;
+    padding: 10px;
+    bottom: 0;
+    width: 100%;
+    height: 60px;   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
