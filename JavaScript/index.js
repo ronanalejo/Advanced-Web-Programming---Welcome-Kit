@@ -23,4 +23,3 @@ document.addEventListener('DOMContentLoaded', function() {
       contentSection.style.display = 'block';
     });
   });
-  
