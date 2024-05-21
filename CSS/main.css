@@ -23,6 +23,8 @@ body {
 /* NORMAL STYLES */
 .header {
     background-color: rgb(255, 255, 255);
+    position: fixed;
+    width: 100%;
 }
 
 .header-content{
@@ -67,17 +69,25 @@ body {
 }
 
 .main {
-
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 30px;
 }
 
 .heading {
 
 }
 
+.active {
+    color: black;
+}
+
 .section
 {
-    height: 100vh;
-    
+    height: 100vh;    
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .section:nth-child(1){
