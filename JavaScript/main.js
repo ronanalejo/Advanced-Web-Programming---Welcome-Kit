@@ -1,20 +1,24 @@
 document.addEventListener('DOMContentLoaded', function() {
     const elementUserName = document.getElementById('elementUserName');
-    const elementYearLevel = document.getElementById('elementYearLevel');
-    const elementCourse = document.getElementById('elementCourse');
+    const logoImg = document.querySelector('.logo-img');
+    const modeSwitch = document.getElementById('modeSwitch');
+
+    if (!elementUserName || !logoImg || !modeSwitch) {
+        console.error('One or more elements not found:', {
+            elementUserName,
+            logoImg,
+            modeSwitch
+        });
+        return;
+    }
 
     const userName = localStorage.getItem('userName');
-    const userYearLevel = localStorage.getItem('userYearLevel');
-    const userCourse = localStorage.getItem('userCourse');
 
-    if (userName && userYearLevel && userCourse) {
+    if (userName) {
         elementUserName.innerHTML = `Hello ${userName}`;
-        elementYearLevel.innerHTML = `${userYearLevel}`;
-        elementCourse.innerHTML = `${userCourse}`;
     }
-});
 
-// Nav bar scroll behavior
+    // Nav bar scroll behavior
     const navLinkEls = document.querySelectorAll('.nav-link');
     const sectionEls = document.querySelectorAll('.section');
 
@@ -34,11 +38,17 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-  // Light Mode and Dark Mode
-  modeSwitch.addEventListener('change', function() {
-    if (modeSwitch.checked) {
-        document.documentElement.setAttribute('data-theme', 'dark');
-    } else {
-        document.documentElement.setAttribute('data-theme', 'light');
-    }
+    // Light Mode and Dark Mode
+    modeSwitch.addEventListener('change', function() {
+        console.log('Mode switch changed');
+        if (modeSwitch.checked) {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            logoImg.src = './IMG/nav-logo-white.png'; // Path to the dark mode logo
+            console.log('Dark mode enabled, logo changed to white');
+        } else {
+            document.documentElement.setAttribute('data-theme', 'light');
+            logoImg.src = './IMG/nav-logo-blue.png'; // Path to the light mode logo
+            console.log('Light mode enabled, logo changed to blue');
+        }
+    });
 });
