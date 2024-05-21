@@ -21,6 +21,10 @@ body {
     align-items: center;
   }
 
+  #nameInput {
+    padding: 10px 50px;
+  }
+
   label {
     margin: 0px 0px 1px 0px;
   }
@@ -29,8 +33,13 @@ body {
 
   }
 
-  #submit-btn {
-    margin: 5px 0px 0px 20px;
+  select#yearLevel {
+    padding: 0px 15px;
+    margin: 0px 0px 10px 0px;
+  }
+
+  #submitButton {
+    margin: 30px 0px 0px 150px;
     padding: 6px 30px;
   }
   
