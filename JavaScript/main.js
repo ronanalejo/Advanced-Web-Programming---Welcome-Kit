@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
         elementCourse.innerHTML = `${userCourse}`;
     }
 
+// Nav bar scroll behavior
     const navLinkEls = document.querySelectorAll('.nav-link');
     const sectionEls = document.querySelectorAll('.section');
 
@@ -34,3 +35,11 @@ document.addEventListener('DOMContentLoaded', function() {
     
 });
 
+  // Light Mode and Dark Mode
+  modeSwitch.addEventListener('change', function() {
+    if (modeSwitch.checked) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+    } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+    }
+});
