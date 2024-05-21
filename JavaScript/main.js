@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (userName && userYearLevel && userCourse) {
         welcomeHeading.textContent = `Welcome Game Changer, ${userName}`;
-        userDetails.innerHTML = `<br>${userYearLevel}, ${userCourse}`;
+        userDetails.innerHTML = `${userYearLevel}, ${userCourse}`;
     }
 
     const navLinkEls = document.querySelectorAll('.nav-link');
