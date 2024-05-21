@@ -22,7 +22,15 @@ body {
   }
 
   #nameInput {
-    padding: 10px 50px;
+    padding: 10px 100px 10px 6px;
+    border-radius: 7px;
+  }
+  #yearLevel {
+    padding: 20px;
+    display: flex;
+  }
+  select#courses {
+    display: flex;
   }
 
   label {
