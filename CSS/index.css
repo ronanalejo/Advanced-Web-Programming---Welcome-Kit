@@ -6,7 +6,7 @@ body {
     padding: 0;
     transition: background-color 0.3s, color 0.3s;
   }
-  
+  /* Header */
   header {
     background-color: var(--header-background);
     color: var(--header-text);
@@ -25,7 +25,7 @@ body {
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
-  
+  /* Footer */
   footer {
     background-color: var(--header-background);
     color: var(--header-text);
@@ -51,7 +51,7 @@ body {
     --header-text: #f0f0f0;
     --section-background: #444;
   }
-
+  /* Darkmode Switch */
   .switch [data-theme="dark"] {
     position: absolute;
     top: 20px;
