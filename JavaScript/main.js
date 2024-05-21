@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const userCourse = localStorage.getItem('userCourse');
 
     if (userName && userYearLevel && userCourse) {
-        elementUserName.innerHTML = `Welcome Game Changer, ${userName}`;
+        elementUserName.innerHTML = `Hello ${userName}`;
         elementYearLevel.innerHTML = `${userYearLevel}`;
         elementCourse.innerHTML = `${userCourse}`;
     }
