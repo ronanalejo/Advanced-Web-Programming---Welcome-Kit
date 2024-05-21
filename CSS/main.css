@@ -26,7 +26,12 @@ body {
 }
 
 .header-content{
-
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 30px;
 }
 
 .logo {
@@ -34,7 +39,8 @@ body {
 }
 
 .logo-img {
-
+    height: 60px;
+    padding: 10px;
 }
 
 .nav {
@@ -42,7 +48,8 @@ body {
 }
 
 .nav-list {
-
+    display: flex;
+    column-gap: 40px;
 }
 
 .nav-item {
@@ -50,7 +57,13 @@ body {
 }
 
 .nav-link {
+ color: #26346b;
+ font-size: 15px;
+ transition: all 0.2;
+}
 
+.nav-link:hover {
+    color: black;
 }
 
 .main {
@@ -59,4 +72,10 @@ body {
 
 .heading {
 
+}
+
+.section
+{
+
+    
 }
