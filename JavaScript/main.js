@@ -1,14 +1,16 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const welcomeHeading = document.getElementById('welcomeHeading');
-    const userDetails = document.getElementById('userDetails');
+    const elementUserName = document.getElementById('elementUserName');
+    const elementYearLevel = document.getElementById('elementYearLevel');
+    const elementCourse = document.getElementById('elementCourse');
 
     const userName = localStorage.getItem('userName');
     const userYearLevel = localStorage.getItem('userYearLevel');
     const userCourse = localStorage.getItem('userCourse');
 
     if (userName && userYearLevel && userCourse) {
-        welcomeHeading.textContent = `Welcome Game Changer, ${userName}`;
-        userDetails.innerHTML = `${userYearLevel} <br>${userCourse}`;
+        elementUserName.innerHTML = `Welcome Game Changer, ${userName}`;
+        elementYearLevel.innerHTML = `${userYearLevel}`;
+        elementCourse.innerHTML = `${userCourse}`;
     }
 
     const navLinkEls = document.querySelectorAll('.nav-link');
