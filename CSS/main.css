@@ -22,7 +22,7 @@ html {
 /* BASE STYLES */
 body {
     font-family: 'Radio Canada Big', sans-serif;
-    background-color: #d7e8f7;
+    background-color: var(--background-color);
 }
 
 /* NORMAL STYLES */
@@ -64,7 +64,7 @@ body {
 }
 
 .nav-link {
-    background-color: var(--header-background);
+    color: var(--header-text);
     font-size: 15px;
     transition: all 0.2;
 }
@@ -74,8 +74,7 @@ body {
 }
 
 .active {
-    color: #000000;
-    font-style: bold;
+    color: var(--active-color);
 }
 
 .main {
@@ -99,7 +98,7 @@ body {
 }
 
 .section:nth-child(1){
-    background-image: url('https://www.dotdailydose.net/wp-content/uploads/2024/04/iACADEMY-is-the-top-performing-school-in-2024-Real-Estate-Brokers-Licensure-Exam.jpg');
+    background-color: #d4d6e1;
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -134,7 +133,7 @@ body {
 
 .footer{
     background-color: var(--header-background);
-    color: #515d89;
+    color: var(--header-text);
     padding: 10px;
     bottom: 0;
     width: 100%;
@@ -145,11 +144,12 @@ body {
 }
 
 :root {
-    --background-color: #e8f0f7;
+    --background-color: #d7e8f7;
     --text-color: #333;
     --header-background: rgb(255, 255, 255, 0.8);
     --header-text: #515d89;
     --section-background: #fff;
+    --active-color: #000000;
   }
 
   [data-theme="dark"] {
@@ -158,6 +158,7 @@ body {
     --header-background: #111;
     --header-text: #f0f0f0;
     --section-background: #444;
+    --active-color: #515d89;
   }
   /* Darkmode Switch */
   .switch [data-theme="dark"] {

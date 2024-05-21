@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
         elementYearLevel.innerHTML = `${userYearLevel}`;
         elementCourse.innerHTML = `${userCourse}`;
     }
+});
 
 // Nav bar scroll behavior
     const navLinkEls = document.querySelectorAll('.nav-link');
@@ -32,8 +33,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-    
-});
 
   // Light Mode and Dark Mode
   modeSwitch.addEventListener('change', function() {
