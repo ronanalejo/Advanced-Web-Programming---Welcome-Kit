@@ -1,19 +1,24 @@
 document.addEventListener('DOMContentLoaded', function() {
     const elementUserName = document.getElementById('elementUserName');
-    const elementYearLevel = document.getElementById('elementYearLevel');
-    const elementCourse = document.getElementById('elementCourse');
+    const logoImg = document.querySelector('.logo-img');
+    const modeSwitch = document.getElementById('modeSwitch');
 
-    const userName = localStorage.getItem('userName');
-    const userYearLevel = localStorage.getItem('userYearLevel');
-    const userCourse = localStorage.getItem('userCourse');
-
-    if (userName && userYearLevel && userCourse) {
-        elementUserName.innerHTML = `Hello ${userName}`;
-        elementYearLevel.innerHTML = `${userYearLevel}`;
-        elementCourse.innerHTML = `${userCourse}`;
+    if (!elementUserName || !logoImg || !modeSwitch) {
+        console.error('One or more elements not found:', {
+            elementUserName,
+            logoImg,
+            modeSwitch
+        });
+        return;
     }
 
-// Nav bar scroll behavior
+    const userName = localStorage.getItem('userName');
+
+    if (userName) {
+        elementUserName.innerHTML = `Hello Game Changer ${userName}!`;
+    }
+
+    // Nav bar scroll behavior
     const navLinkEls = document.querySelectorAll('.nav-link');
     const sectionEls = document.querySelectorAll('.section');
 
@@ -32,14 +37,36 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-    
+
+    // Light Mode and Dark Mode
+    modeSwitch.addEventListener('change', function() {
+        console.log('Mode switch changed');
+        if (modeSwitch.checked) {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            logoImg.src = './IMG/nav-logo-white.png'; // Path to the dark mode logo
+            console.log('Dark mode enabled, logo changed to white');
+        } else {
+            document.documentElement.setAttribute('data-theme', 'light');
+            logoImg.src = './IMG/nav-logo-blue.png'; // Path to the light mode logo
+            console.log('Light mode enabled, logo changed to blue');
+        }
+    });
 });
 
-  // Light Mode and Dark Mode
-  modeSwitch.addEventListener('change', function() {
-    if (modeSwitch.checked) {
-        document.documentElement.setAttribute('data-theme', 'dark');
-    } else {
-        document.documentElement.setAttribute('data-theme', 'light');
-    }
-});
+
+let sections = document.querySelectorAll('section');
+
+window.onscroll = () => {
+    sections.forEach(sec => {
+        let top = window.scrollY;
+        let offset = sec.offsetTop - 750;
+        let height = sec.offsetHeight;
+
+        if (top >= offset && top < offset + height) {
+            sec.classList.add('show-animate');
+        }
+        else {
+            sec.classList.remove('show-animate');
+        }
+    })
+}
