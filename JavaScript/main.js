@@ -7,8 +7,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const userCourse = localStorage.getItem('userCourse');
 
     if (userName && userYearLevel && userCourse) {
-        welcomeHeading.innerHTML = `Welcome Game Changer, ${userName}<br>`;
-        userDetails.textContent = `${userYearLevel}, ${userCourse}`;
+        welcomeHeading.textContent = `Welcome Game Changer, ${userName}`;
+        userDetails.innerHTML = `<br>${userYearLevel}, ${userCourse}`;
     }
 
     const navLinkEls = document.querySelectorAll('.nav-link');
