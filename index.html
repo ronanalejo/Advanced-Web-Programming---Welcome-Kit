@@ -19,25 +19,29 @@
 
     <main>
         <section id="welcome">
-            <h2>Hello!</h2>
+            <h2>Welcome to iACADEMY</h2>
             <div class="user-info">
                 <form id="nameForm">
-                    <label for="nameInput">Enter your Full Name: </label>
-                    <input type="text" id="nameInput" name="nameInput" required>
-                    <button type="submit">Submit</button>
+                    <label for="nameInput" ></label>
+                    <input placeholder="Enter Your Name" type="text" id="nameInput" name="nameInput" required><br>
                 </form>
+                <br>
                 
                 <label for="yearLevel">Year Level:</label>
+
         <select id="yearLevel" onchange="updateCourses()">
             <option value="">Select Year Level</option>
+
             <option value="shs">Senior High School</option>
             <option value="college">College</option>
         </select>
-
+        <br>
         <label for="courses">Courses:</label>
         <select id="courses">
             <option value="">Select Course</option>
         </select>
+        <br><br>
+        <button id="submit-btn" type="submit">Submit</button><br><br>
 
         <script>
             const shsCourses = [
