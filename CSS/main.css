@@ -14,6 +14,11 @@ ul {
     list-style: none;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+
 /* BASE STYLES */
 body {
     font-family: 'Radio Canada Big', sans-serif;
@@ -22,7 +27,7 @@ body {
 
 /* NORMAL STYLES */
 .header {
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(255, 255, 255, 0.8);
     position: fixed;
     width: 100%;
 }
@@ -31,7 +36,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    max-width: 1200px;
+    max-width: 1500px;
     margin: 0 auto;
     padding: 0 30px;
 }
@@ -59,13 +64,18 @@ body {
 }
 
 .nav-link {
- color: #26346b;
+ color: #515d89;
  font-size: 15px;
  transition: all 0.2;
 }
 
 .nav-link:hover {
-    color: black;
+    color: #000000;
+}
+
+.active {
+    color: #000000;
+    font-style: bold;
 }
 
 .main {
@@ -76,10 +86,6 @@ body {
 
 .heading {
 
-}
-
-.active {
-    color: black;
 }
 
 .section
