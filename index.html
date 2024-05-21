@@ -7,7 +7,6 @@
     <link rel="icon" type="image/x-icon" href="./IMG/logo-blue.png">
     <link rel="stylesheet" href="./CSS/index.css">
 </head>
-
 <body>
     <header>
         <h1>Welcome to iACADEMY</h1>
@@ -16,122 +15,35 @@
             <span class="slider round"></span>
         </label>
     </header>
-
     <main>
         <section id="welcome">
             <h2>Welcome to iACADEMY</h2>
             <div class="user-info">
                 <form id="nameForm">
-                    <label for="nameInput" ></label>
+                    <label for="nameInput"></label>
                     <input placeholder="Enter Your Name" type="text" id="nameInput" name="nameInput" required><br>
+                    <br>
+                    <label for="yearLevel">Year Level:</label>
+                    <select id="yearLevel" required>
+                        <option value="">Select Year Level</option>
+                        <option value="shs">Senior High School</option>
+                        <option value="college">College</option>
+                    </select>
+                    <br>
+                    <label for="courses">Courses:</label>
+                    <select id="courses" required>
+                        <option value="">Select Course</option>
+                    </select>
+                    <br><br>
+                    <button type="submit" id="submitButton" disabled>Submit</button><br><br>
+                    <p id="errorMessage" style="display:none;color:red;">Please fill out all fields.</p>
                 </form>
-                <br>
-                
-                <label for="yearLevel">Year Level:</label>
-
-        <select id="yearLevel" onchange="updateCourses()">
-            <option value="">Select Year Level</option>
-
-            <option value="shs">Senior High School</option>
-            <option value="college">College</option>
-        </select>
-        <br>
-        <label for="courses">Courses:</label>
-        <select id="courses">
-            <option value="">Select Course</option>
-        </select>
-        <br><br>
-        <button id="submit-btn" type="submit">Submit</button><br><br>
-
-        <script>
-            const shsCourses = [
-                { value: 'shs-abm', text: 'Accountancy, Business and Management' },
-                { value: 'shs-ani', text: 'Animation' },
-                { value: 'shs-artsDesign', text: 'Arts and Design' },
-                { value: 'shs-audoProd', text: 'Audio Production' },
-                { value: 'shs-sd', text: 'Software Development' },
-                { value: 'shs-fd', text: 'Fashion Design' },
-                { value: 'shs-graphIllu', text: 'Graphic Illustration' },
-                { value: 'shs-humss', text: 'Humanities and Social Sciences' },
-                { value: 'shs-robotics', text: 'Robotics' }
-            ];
-
-            const collegeCourses = [
-                {
-                    label: 'School Of Computing (SOC)',
-                    options: [
-                        { value: 'SOC-software', text: 'Software Engineering' },
-                        { value: 'SOC-cloud', text: 'Cloud Engineering' },
-                        { value: 'SOC-web', text: 'Web Development' },
-                        { value: 'SOC-game', text: 'Game Development' },
-                        { value: 'SOC-data', text: 'Data Science' }
-                    ]
-                },
-                {
-                    label: 'School Of Design and Arts (SODA)',
-                    options: [
-                        { value: 'SODA-multimedia', text: 'Multimedia Arts' },
-                        { value: 'SODA-fashion', text: 'Fashion Design' },
-                        { value: 'SODA-animation', text: 'Animation' },
-                        { value: 'SODA-music', text: 'Music Production' },
-                        { value: 'SODA-film', text: 'Film and Visual Effects' }
-                    ]
-                },
-                {
-                    label: 'School of Business and Liberal Arts (SBLA)',
-                    options: [
-                        { value: 'SBLA-marketing', text: 'Marketing Management' },
-                        { value: 'SBLA-e-management', text: 'E-Management' },
-                        { value: 'SBLA-real-estate', text: 'Real Estate Management' },
-                        { value: 'SBLA-psychology', text: 'Psychology' },
-                        { value: 'SBLA-accountancy', text: 'Accountancy' }
-                    ]
-                }
-            ];
-
-            function updateCourses() {
-                const yearLevel = document.getElementById('yearLevel').value;
-                const coursesSelect = document.getElementById('courses');
-
-                coursesSelect.innerHTML = '<option value="">Select Course</option>';
-
-                if (yearLevel === 'shs') {
-                    shsCourses.forEach(course => {
-                        const option = document.createElement('option');
-                        option.value = course.value;
-                        option.textContent = course.text;
-                        coursesSelect.add(option);
-                    });
-                } else if (yearLevel === 'college') {
-                    collegeCourses.forEach(group => {
-                        const optgroup = document.createElement('optgroup');
-                        optgroup.label = group.label;
-                        group.options.forEach(course => {
-                            const option = document.createElement('option');
-                            option.value = course.value;
-                            option.textContent = course.text;
-                            optgroup.appendChild(option);
-                        });
-                        coursesSelect.appendChild(optgroup);
-                    });
-                }
-            }
-        </script>
             </div>
         </section>
-
-        <section id="content" style="display:none;">
-            <h2 id="welcomeMessage"></h2>
-            <p id="personalizedMessage"></p>
-            <!-- Other sections like About, Campus, etc. will be included here -->
-        </section>
     </main>
-
     <footer>
         <p>&copy; SY2024 Welcome Kit by Group 2. All rights reserved.</p>
     </footer>
-
     <script src="./JavaScript/index.js"></script>
 </body>
-
 </html>
