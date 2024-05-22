@@ -11,13 +11,6 @@ body {
   align-items: center;
   transition: background-color 0.5s, color 0.3s;
 }
-  /* Header */
-  header {
-    background-color: var(--header-background);
-    color: var(--header-text);
-    padding: 20px;
-    text-align: center;
-  }
   
   main {
     display: flex;
@@ -78,7 +71,7 @@ body {
     margin: 30px 0px 0px 150px;
     padding: 9px 40px;
     cursor: pointer;
-    background-color: var(--hexagon-after);
+    background-color: var(--button-bg);
     color: var(--text-color);
     border-color: var(--text-color);
   }
@@ -110,25 +103,23 @@ body {
   :root {
     --background-color: #e8f0f7;
     --text-color: #333;
-    --header-background: #26346b;
-    --header-text: #fff;
     --section-background: #fff;
     --hexagon-before: rgba(203, 225, 255, 0.3);
     --hexagon-after: #b7cbe6;
     --hexagon: #fff;
     --form-bg: rgba(203, 225, 255, 0.3);
+    --button-bg: #b7cbe6;
   }
 
   [data-theme="dark"] {
     --background-color: #333;
     --text-color: #f0f0f0;
-    --header-background: #111;
-    --header-text: #f0f0f0;
     --section-background: #111;
     --hexagon-before: rgba(255, 255, 255, 0.03);
     --hexagon-after: #111;
     --hexagon: #000;
     --form-bg: #444;
+    --button-bg: #1d1d1d;
   }
   /* Darkmode Switch */
   .switch [data-theme="dark"] {
