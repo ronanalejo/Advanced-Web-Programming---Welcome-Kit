@@ -30,6 +30,7 @@ body {
 .header {
     position: fixed;
     width: 100%;
+    z-index: 999;
 }
 
 .header-content{
@@ -42,6 +43,7 @@ body {
     padding: 0 175px;
     transition: background-color 0.3s;
 }
+
 
 .logo {
 
