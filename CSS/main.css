@@ -256,14 +256,37 @@ nav li:first-child {
 
 /* --------------- EVENTS --------------- */
 .section:nth-child(7){
-    height: 100vh; 
+    box-sizing: border-box;
+    height: 100vh;
+}
+
+.events-container {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center;
-    color: var(--text-color);
-    transition: color 0.3s;
+    
+}
+
+.slider {
+    position: absolute;
+    inset: 80px 200px 80px 80px;
+    background-color: black;
+    border-radius: 20px;
+}
+
+.slider .slides {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 240px;
+    height: 320px;
+    background: var(--img);
+    transition: 0.5s;
+    border-radius: 20px;
 }
 
 /* --------------- OTHERS --------------- */
@@ -276,6 +299,7 @@ nav li:first-child {
     text-align: center;
     color: var(--text-color);
     transition: color 0.3s;
+    
 }
 
 
@@ -291,6 +315,7 @@ nav li:first-child {
     justify-content: center;
     align-items: center;
     transition: background-color 0.3s;
+    
 }
 
 
