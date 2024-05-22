@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const personalizedMessage = document.getElementById('personalizedMessage');
   const welcomeSection = document.getElementById('welcome');
   const contentSection = document.getElementById('content');
+  const logoImg = document.querySelector('.logo-img');
 
   // SHS Couorses (Opt Dropdown Select)
   const shsCourses = [
@@ -57,14 +58,18 @@ document.addEventListener('DOMContentLoaded', function() {
       }
   ];
 
-  // Light Mode and Dark Mode
-  modeSwitch.addEventListener('change', function() {
-      if (modeSwitch.checked) {
-          document.documentElement.setAttribute('data-theme', 'dark');
-      } else {
-          document.documentElement.setAttribute('data-theme', 'light');
-      }
-  });
+      // Light Mode and Dark Mode
+      modeSwitch.addEventListener('change', function() {
+        if (modeSwitch.checked) {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            logoImg.src = './IMG/nav-logo-white.png'; // Path to the dark mode logo
+        } else {
+            document.documentElement.setAttribute('data-theme', 'light');
+            logoImg.src = './IMG/nav-logo-blue.png'; // Path to the light mode logo
+        }
+    });
+});
+
 
   // Function to show specific Courses depends on the selected Year Level
   function updateCourses() {
@@ -127,5 +132,4 @@ document.addEventListener('DOMContentLoaded', function() {
         // Redirect to main.html
         window.location.href = 'main.html';
     }
-});
 });
