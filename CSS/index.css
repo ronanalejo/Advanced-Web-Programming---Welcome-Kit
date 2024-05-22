@@ -1,11 +1,16 @@
 body {
-    font-family: 'Radio Canada Big', sans-serif;
-    background-color: var(--background-color);
-    color: var(--text-color);
-    margin: 0;
-    padding: 0;
-    transition: background-color 0.5s, color 0.3s;
-  }
+  font-family: 'Radio Canada Big', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.5s, color 0.3s;
+}
   /* Header */
   header {
     background-color: var(--header-background);
@@ -15,18 +20,21 @@ body {
   }
   
   main {
-    margin: 150px auto;
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: absolute;
-    z-index: 5;
+    position: relative;
+    z-index: 999;
 }
 
   #nameInput {
     padding: 10px 100px 10px 6px;
     border-radius: 7px;
     border: solid 1px;
+    background-color: var(--form-bg);
+    color: var(--text-color);
+    border-color: var(--text-color);
+    transition: 1s;
   }
   select#yearLevel {
     display: flex;
@@ -36,6 +44,9 @@ body {
     cursor: pointer;
     margin: 6px auto;
     transition: 1s;
+    background-color: var(--form-bg);
+    color: var(--text-color);
+    border-color: var(--text-color);
   }
 
   select#courses {
@@ -45,6 +56,10 @@ body {
     border-radius: 7px;
     margin: 6px auto;
     cursor: pointer;
+    background-color: var(--form-bg);
+    color: var(--text-color);
+    border-color: var(--text-color);
+    transition: 1s;
   }
 
   label {
@@ -56,11 +71,16 @@ body {
   }
 
   #submitButton {
+    font-family: 'Radio Canada Big', sans-serif;
+    font-size: 14px;
     border-radius: 7px;
     border: solid 1px;
     margin: 30px 0px 0px 150px;
     padding: 9px 40px;
     cursor: pointer;
+    background-color: var(--hexagon-after);
+    color: var(--text-color);
+    border-color: var(--text-color);
   }
 
   section {
@@ -68,7 +88,7 @@ body {
     margin-bottom: 100px;
     padding: 50px 60px;
     border-radius: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 30px rgba(38, 52, 107, 1);
     transition: background-color 0.5s;
   }
   /* Footer */
@@ -93,6 +113,10 @@ body {
     --header-background: #26346b;
     --header-text: #fff;
     --section-background: #fff;
+    --hexagon-before: rgba(203, 225, 255, 0.3);
+    --hexagon-after: #b7cbe6;
+    --hexagon: #fff;
+    --form-bg: rgba(203, 225, 255, 0.3);
   }
 
   [data-theme="dark"] {
@@ -100,7 +124,11 @@ body {
     --text-color: #f0f0f0;
     --header-background: #111;
     --header-text: #f0f0f0;
-    --section-background: #444;
+    --section-background: #111;
+    --hexagon-before: rgba(255, 255, 255, 0.03);
+    --hexagon-after: #111;
+    --hexagon: #000;
+    --form-bg: #444;
   }
   /* Darkmode Switch */
   .switch [data-theme="dark"] {
@@ -163,7 +191,7 @@ body {
   
   input:checked + .slider:before {
     transform: translateX(26px);
-    background-color: rgb(53, 107, 255);                                        
+    background-color: rgba(38, 52, 107, 1);                                        
   }
 
   /* HEXAGON BACKGROUND TEST */
@@ -191,7 +219,7 @@ body {
     width: 100px;
     height: 110px;
     margin: 2px;
-    background-color: #000;
+    background-color: var(--hexagon);
     clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
     animation: animation 4s linear infinite;
   }
@@ -214,15 +242,15 @@ body {
   bottom: 4px;
   left: 4px;
   right: 4px;
-  background-color: #111;
+  background-color: var(--hexagon-after);
   clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
 }
 
 .hexagon:before {
-  content: '';
-  position: absolute;
-  width: 50%;
-  height: 100%;
-  background-color: rgba(255,255,255,0.03);
-  z-index: 2;
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    background-color: var(--hexagon-before);
+    z-index: 2;
 }
