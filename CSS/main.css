@@ -97,6 +97,11 @@ body {
 
 .section
 {
+
+}
+
+/* --------------- HOME --------------- */
+.section:nth-child(1){
     height: 100vh; 
     display: flex;
     flex-direction: column;
@@ -107,51 +112,108 @@ body {
     transition: color 0.3s;
 }
 
-.section:nth-child(1){
-    background-color: var(--s1-bg-color);
-    transition: background-color 0.5s;
+.h1-home {
+    font-size: 65px;
 }
 
+.h3-home {
+    font-size: 30px;
+}
+
+.h4-home {
+    font-size: 25px;
+}
+
+/* --------------- ABOUT --------------- */
 .section:nth-child(2){
-    background-color: var(--s2-bg-color);
-    transition: background-color 0.5s;
+    height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--text-color);
+    transition: color 0.3s;
 }
 
+/* --------------- CAMPUS --------------- */
 .section:nth-child(3){
-    background-color: var(--s3-bg-color);
-    transition: background-color 0.5s;
+    height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--text-color);
+    transition: color 0.3s;
 }
 
+/* --------------- MEET THE FAMILY --------------- */
 .section:nth-child(4){
-    background-color: var(--s4-bg-color);
-    transition: background-color 0.5s;
+    height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--text-color);
+    transition: color 0.3s;
 }
 
+/* --------------- MEET THE FAMILY (DEPARTMENTS) --------------- */
 .section:nth-child(5){
-    background-color: var(--s5-bg-color);
-    transition: background-color 0.5s;
+    height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--text-color);
+    transition: color 0.3s;
 }
 
+/* --------------- FACILITIES --------------- */
 .section:nth-child(6){
-    background-color: var(--s6-bg-color);
-    transition: background-color 0.5s;
+    height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--text-color);
+    transition: color 0.3s;
 }
 
+/* --------------- ORGANIZATIONS --------------- */
 .section:nth-child(7){
-    background-color: var(--s7-bg-color);
-    transition: background-color 0.5s;
+    height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--text-color);
+    transition: color 0.3s;
 }
 
+/* --------------- EVENTS --------------- */
 .section:nth-child(8){
-    background-color: var(--s8-bg-color);
-    transition: background-color 0.5s;
+
 }
 
+/* --------------- OTHERS --------------- */
 .section:nth-child(9){
-    background-color: var(--s9-bg-color);
-    transition: background-color 0.5s;
+    height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--text-color);
+    transition: color 0.3s;
 }
 
+/* --------------- FOOTER --------------- */
 .footer{
     background-color: var(--header-background);
     color: var(--header-text);
@@ -165,6 +227,8 @@ body {
     transition: background-color 0.3s;
 }
 
+
+/* --------------- DARK/LIGHT MODE + SWITCH --------------- */
 :root {
     --background-color: #d7e8f7;
     --bg-grad-1: #d7e8f7;
@@ -276,6 +340,8 @@ body {
     transform: translateX(26px);
   }
 
+
+/* --------------- SECTION ANIMATIONS --------------- */
 .animate{
     transition: 1s;
 }
@@ -290,16 +356,4 @@ body {
 
 .section:nth-child(1).show-animate .animate{
     transform: scale(1);
-}
-
-.h1-home {
-    font-size: 65px;
-}
-
-.h3-home {
-    font-size: 30px;
-}
-
-.h4-home {
-    font-size: 25px;
 }
