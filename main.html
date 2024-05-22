@@ -19,38 +19,76 @@
                 <img src="./IMG/nav-logo-blue.png" alt="logo" class="logo-img" id="logoImg">
             </a>
 
+            <!-- Sidebar -->
+
             <nav class="nav">
-                <ul class="nav-list">
-                    <li class="nav-item">
+                <ul class="nav-sidebar">
+                    <li class="nav-side" onclick="hideSidebar()">
+                        <a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a>
+                    </li>
+                    <li class="nav-side">
                         <a href="#home" class="nav-link active">Home</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-side">
                         <a href="#about" class="nav-link">About</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-side">
                         <a href="#campus" class="nav-link">Campus</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-side">
                         <a href="#meet" class="nav-link">Meet the Family</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-side">
                         <a href="#facilities" class="nav-link">Facilities</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-side">
                         <a href="#org" class="nav-link">Organizations</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-side">
                         <a href="#events" class="nav-link">Events</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-side">
                         <a href="#others" class="nav-link">Others</a>
                     </li>
-                    <li class="nav-item">
+
+                </ul>
+
+                <!-- Desktop Navbar -->
+
+                <ul class="nav-desktop">
+                    <li class="nav-main">
+                        <a href="#home" class="nav-link active">Home</a>
+                    </li>
+                    <li class="nav-main">
+                        <a href="#about" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-main">
+                        <a href="#campus" class="nav-link">Campus</a>
+                    </li>
+                    <li class="nav-main">
+                        <a href="#meet" class="nav-link">Meet the Family</a>
+                    </li>
+                    <li class="nav-main">
+                        <a href="#facilities" class="nav-link">Facilities</a>
+                    </li>
+                    <li class="nav-main">
+                        <a href="#org" class="nav-link">Organizations</a>
+                    </li>
+                    <li class="nav-main">
+                        <a href="#events" class="nav-link">Events</a>
+                    </li>
+                    <li class="nav-main">
+                        <a href="#others" class="nav-link">Others</a>
+                    </li>
+                    <li id="menu-btn" class="nav-main" onclick="showSidebar()">
+                        <a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a>
+                    </li>
+
                         <label class="switch">
                             <input type="checkbox" id="modeSwitch">
                             <span class="slider round"></span>
                         </label>
-                    </li>
+                
                 </ul>
             </nav>
         </div>
