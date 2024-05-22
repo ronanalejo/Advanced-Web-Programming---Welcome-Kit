@@ -58,6 +58,38 @@ document.addEventListener('DOMContentLoaded', function() {
       }
   ];
 
+  // Function to show specific Courses depends on the selected Year Level
+  function updateCourses() {
+    const yearLevelValue = yearLevel.value;
+    courses.innerHTML = '<option value="">Select Course</option>';
+
+    if (yearLevelValue === 'shs') {
+        shsCourses.forEach(course => {
+            const option = document.createElement('option');
+            option.value = course.value;
+            option.textContent = course.text;
+            courses.add(option);
+        });
+    } else if (yearLevelValue === 'college') {
+        collegeCourses.forEach(group => {
+            const optgroup = document.createElement('optgroup');
+            optgroup.label = group.label;
+            group.options.forEach(course => {
+                const option = document.createElement('option');
+                option.value = course.value;
+                option.textContent = course.text;
+                optgroup.appendChild(option);
+            });
+            courses.appendChild(optgroup);
+        });
+    }
+    validateForm();
+}
+
+    nameInput.addEventListener('input', validateForm);
+    yearLevel.addEventListener('change', updateCourses);
+    courses.addEventListener('change', validateForm);
+    
       // Light Mode and Dark Mode
       modeSwitch.addEventListener('change', function() {
         if (modeSwitch.checked) {
@@ -70,35 +102,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-
-  // Function to show specific Courses depends on the selected Year Level
-  function updateCourses() {
-      const yearLevelValue = yearLevel.value;
-      courses.innerHTML = '<option value="">Select Course</option>';
-
-      if (yearLevelValue === 'shs') {
-          shsCourses.forEach(course => {
-              const option = document.createElement('option');
-              option.value = course.value;
-              option.textContent = course.text;
-              courses.add(option);
-          });
-      } else if (yearLevelValue === 'college') {
-          collegeCourses.forEach(group => {
-              const optgroup = document.createElement('optgroup');
-              optgroup.label = group.label;
-              group.options.forEach(course => {
-                  const option = document.createElement('option');
-                  option.value = course.value;
-                  option.textContent = course.text;
-                  optgroup.appendChild(option);
-              });
-              courses.appendChild(optgroup);
-          });
-      }
-      validateForm();
-  }
-
   // Submit button can't be selected unless all fields (Full Name input, Year Level input, Courses input) are selected
   function validateForm() {
       if (nameInput.value && yearLevel.value && courses.value) {
@@ -109,9 +112,6 @@ document.addEventListener('DOMContentLoaded', function() {
       }
   }
 
-  nameInput.addEventListener('input', validateForm);
-  yearLevel.addEventListener('change', updateCourses);
-  courses.addEventListener('change', validateForm);
   
   nameForm.addEventListener('submit', function(event) {
     if (!nameInput.value || !yearLevel.value || !courses.value) {
