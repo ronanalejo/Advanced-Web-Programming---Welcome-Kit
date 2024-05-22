@@ -22,8 +22,11 @@ html {
 /* BASE STYLES */
 body {
     font-family: 'Radio Canada Big', sans-serif;
-    background-color: var(--background-color);
-    transition: background-color 0.3s;
+    background-image: 
+        linear-gradient(
+            to bottom, var(--bg-grad-1), var(--bg-grad-2)
+        );
+    transition: background-image 0.3s;
 }
 
 /* NORMAL STYLES */
@@ -164,13 +167,15 @@ body {
 
 :root {
     --background-color: #d7e8f7;
+    --bg-grad-1: #d7e8f7;
+    --bg-grad-2: #3c487a;
     --text-color: #333;
     --header-background: rgb(255, 255, 255, 0.8);
     --header-text: #515d89;
     --section-background: #fff;
     --hover-nav: #000000;
     --active-color: #000000;
-    --s1-bg-color: #e9ebf0;
+    /*--s1-bg-color: #e9ebf0;
     --s2-bg-color: #d4d6e1;
     --s3-bg-color: #bec2d3;
     --s4-bg-color: #a8aec4;
@@ -178,27 +183,29 @@ body {
     --s6-bg-color: #7d85a6;
     --s7-bg-color: #677197;
     --s8-bg-color: #515d89;
-    --s9-bg-color: #3c487a;
+    --s9-bg-color: #3c487a;*/
     --slider-color: #26346b;
     --slider-bg: #d7e8f7;
   }
 
   [data-theme="dark"] {
     --background-color: #111;
+    --bg-grad-1: #0b1020;
+    --bg-grad-2: #26346b;
     --text-color: #f0f0f0;
     --header-background: rgb(0,0,0,0.9);
     --header-text: #f0f0f0;
     --section-background: #444;
     --hover-nav: #26346b;
     --active-color: #26346b;
-    --s1-bg-color: #0b1020;
+    /*--s1-bg-color: #0b1020;
     --s2-bg-color: #0f152b;
     --s3-bg-color: #131a36;
     --s4-bg-color: #171f40;
     --s5-bg-color: #1b244b;
     --s6-bg-color: #1e2a56;
     --s7-bg-color: #222f60;
-    --s8-bg-color: #26346b;
+    --s8-bg-color: #26346b;*/
     --slider-color: rgba(255, 255, 255, 1);
     --slider-bg: #444;
   }
