@@ -271,14 +271,14 @@ nav li:first-child {
     
 }
 
-.slider {
+.events-slider {
     position: absolute;
     inset: 80px 200px 80px 80px;
     background-color: black;
     border-radius: 20px;
 }
 
-.slider .slides {
+.events-slider .events-slides {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
