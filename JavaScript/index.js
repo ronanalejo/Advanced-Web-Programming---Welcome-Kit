@@ -10,6 +10,30 @@ document.addEventListener('DOMContentLoaded', function() {
   const welcomeSection = document.getElementById('welcome');
   const contentSection = document.getElementById('content');
   const logoImg = document.querySelector('.logo-img');
+  const cursor = document.querySelector(".cursor");
+  var timeout;
+
+//follow cursor on mousemove
+document.addEventListener("mousemove", (e) => {
+    let x = e.pageX;
+    let y = e.pageY;
+
+    cursor.style.top = y + "px";
+    cursor.style.left = x + "px";
+    cursor.style.display= "block";
+
+//cursor effects on mousestop
+function mouseStopped(){
+    cursor.style.display = "none";
+    }
+   clearTimeout(timeout);
+   timeout = setTimeout(mouseStopped, 1000);
+});
+
+//cursor effects on mouseout
+document.addEventListener("mouseout", () => {
+    cursor.style.display = "none";
+});
 
   // SHS Couorses (Opt Dropdown Select)
   const shsCourses = [
@@ -101,6 +125,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+
 
   // Submit button can't be selected unless all fields (Full Name input, Year Level input, Courses input) are selected
   function validateForm() {

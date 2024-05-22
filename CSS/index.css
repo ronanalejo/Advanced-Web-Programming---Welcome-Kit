@@ -10,13 +10,14 @@ body {
   justify-content: center;
   align-items: center;
   transition: background-color 0.5s, color 0.3s;
+  cursor: none;
 }
   
   main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    z-index: 999;
+    z-index: 900;
     transition: 0.5s;
 }
 
@@ -39,7 +40,7 @@ body {
     height: 35px;
     width: 280px;
     border-radius: 7px;
-    cursor: pointer;
+    cursor: none;
     margin: 6px auto;
     transition: 1s;
     background-color: var(--form-bg);
@@ -53,7 +54,7 @@ body {
     width: 280px;
     border-radius: 7px;
     margin: 6px auto;
-    cursor: pointer;
+    cursor: none;
     background-color: var(--form-bg);
     color: var(--text-color);
     border-color: var(--text-color);
@@ -75,7 +76,7 @@ body {
     border: solid 1px;
     margin: 30px 0px 0px 150px;
     padding: 9px 40px;
-    cursor: pointer;
+    cursor: none;
     background-color: var(--button-bg);
     color: var(--text-color);
     border-color: var(--text-color);
@@ -146,6 +147,7 @@ body {
     border-radius: 20px;
     padding-bottom: 5px;
     padding-right: -5px;
+    cursor: none;
   }
  
   .switch input {
@@ -166,7 +168,7 @@ body {
     background-color: black;
     position: relative;
     border-radius: 24px;
-    cursor: pointer;
+    cursor: none;
     margin-right: 48px;
   }
 
@@ -258,4 +260,40 @@ body {
 .logo-img {
   height: 120px;
   padding-bottom: 20px;
+}
+
+.cursor{
+  z-index: 999;
+  position: fixed;
+  background-color: #2696E8;
+  width: 20px;
+  height:  20px;
+  border-radius: 50%;
+  pointer-events: none;
+  box-shadow: 0 0 20px #2696E8,
+              0 0 60px #2696E8,
+              0 0 100px #2696E8;
+  animation: colors 5s infinite;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+
+/*@keyframes colors{
+  0%{
+    filter: hue-rotate(0deg);
+  }
+  100%{
+    filter: hue-rotate(100deg);
+  }
+}*/
+
+.cursor:before{
+  content: '';
+  position: absolute;
+  background: #3a4fa3;
+  width: 50px;
+  height: 50px;
+  opacity: 0.2;
+  transform: translate(-30%, -30%);
+  border-radius: 50%;
 }
