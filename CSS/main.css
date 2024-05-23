@@ -256,20 +256,25 @@ nav li:first-child {
 
 /* --------------- EVENTS --------------- */
 .section:nth-child(7){
-    box-sizing: border-box;
-    height: 100vh;
-    margin: 0;
-    padding: 0;
+    height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    color: var(--text-color);
+    transition: color 0.3s;
 }
 
 .events-container {
     position: absolute;
-    width: 100vw;
+    width: 99.2vw;
     height: 100vh;
     overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
 
 .events-slider {
@@ -291,6 +296,9 @@ nav li:first-child {
     transition: 0.5s;
     border-radius: 20px;
     box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
 }
 
 .events-slider .events-slides:nth-child(1),
@@ -300,8 +308,172 @@ nav li:first-child {
     left: 0;
     width: 100%;
     height: 100%;
-    /* PUTANGINA TULOY KO NALANG MAMAYA https://www.youtube.com/watch?v=tthIRPzN61Y */
+    transform: translateY(0);
+    box-shadow: 0 25px 50px rgba(0,0,0,0);
+    background-size: cover;
 }
+
+.events-slider .events-slides:nth-child(3) {
+    left: calc(50% + 240px);
+    background-size: cover;
+}
+
+.events-slider .events-slides:nth-child(4) {
+    left: calc(50% + 500px);
+    background-size: cover;
+}
+
+.events-slider .events-slides:nth-child(5) {
+    left: calc(50% + 760px);
+    background-size: cover;
+}
+
+.events-slider .events-slides:nth-child(6) {
+    left: calc(50% + 1020px);
+    background-size: cover;
+    opacity: 0;
+}
+
+.events-slider .events-slides:nth-child(7) {
+    left: calc(50% + 1280px);
+    background-size: cover;
+    opacity: 0;
+}
+
+.events-slider .events-slides:nth-child(8) {
+    left: calc(50% + 1540px);
+    background-size: cover;
+    opacity: 0;
+}
+
+.events-slider .events-slides:nth-child(9) {
+    left: calc(50% + 1800px);
+    background-size: cover;
+    opacity: 0;
+}
+
+.events-buttons {
+    position: absolute;
+    bottom: 15px;
+    display: flex;
+    gap: 20px;
+}
+
+.events-buttons span {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background: #111;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.events-buttons span::before {
+    content:'';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-top: 4px solid #fff;
+    border-left: 4px solid #fff;
+    transform: rotate(315deg) translate(2px,2px);
+}
+
+.events-buttons span:nth-child(2)::before {
+    transform: rotate(135deg) translate(2px,2px);
+}
+
+.events-buttons span:active {
+    opacity: 0.5;
+}
+
+.events-slides-content {
+    position: relative;
+    padding: 40px;
+    max-width: 600px;
+    transition: 0.25s;
+    transition-delay: 0s;
+    transform: translateY(40px);
+    z-index: 800;
+    opacity: 0;
+}
+
+.events-slides-content h2 {
+    font-size: 4em;
+    color: #fff;
+}
+
+.events-slides-content p {
+    color: #fff;
+}
+
+
+.events-slider .events-slides:nth-child(1) .events-slides-content,
+.events-slider .events-slides:nth-child(2) .events-slides-content {
+    opacity: 1;
+    transform: translateY(0px);
+    transition-delay: 0.5s;
+}
+
+@media (max-width:900px)
+{
+    .events-slider {
+        position: absolute;
+        inset: 40px 40px 200px 40px;
+    }
+
+.events-slider .events-slides {
+    width: 100px;
+    height: 100px;
+    top: initial;
+    bottom: -170px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+}
+
+.events-slider .events-slides:nth-child(1),
+.events-slider .events-slides:nth-child(2) {
+    top: initial;
+    bottom: 0;
+}
+
+.events-slider .events-slides:nth-child(3)
+{
+    left: 0;
+}
+
+.events-slider .events-slides:nth-child(4)
+{
+    left: 120px;
+}
+
+.events-slider .events-slides:nth-child(5)
+{
+    left: 240px;
+}
+
+.events-slider .events-slides:nth-child(6)
+{
+    left: 360px;
+}
+
+.events-slider .events-slides:nth-child(7)
+{
+    left: 480px;
+}
+
+.events-slider .events-slides:nth-child(8)
+{
+    left: 500px;
+}
+
+.events-slider .events-slides:nth-child(9)
+{
+    left: 620px;
+}
+}
+
 
 /* --------------- OTHERS --------------- */
 .section:nth-child(8){

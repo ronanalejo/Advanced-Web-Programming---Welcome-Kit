@@ -18,6 +18,22 @@ document.addEventListener('DOMContentLoaded', function() {
         elementUserName.innerHTML = `Hello Game Changer ${userName}!`;
     }
 
+    let next = document.querySelector('.next');
+    let prev = document.querySelector('.prev');
+    let slider = document.querySelector('.events-slider');
+
+    next.addEventListener('click', function(){
+        let slides = document.querySelectorAll('.events-slides');
+        slider.appendChild(slides[0]);
+    })
+
+    prev.addEventListener('click', function(){
+        let slides = document.querySelectorAll('.events-slides');
+        slider.prepend(slides[slides.length -1]);
+    })
+
+
+
     // Nav bar scroll behavior
     const navLinkEls = document.querySelectorAll('.nav-link');
     const sectionEls = document.querySelectorAll('.section');
