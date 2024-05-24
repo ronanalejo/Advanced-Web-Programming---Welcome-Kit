@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const elementUserName = document.getElementById('elementUserName');
     const logoImg = document.querySelector('.logo-img');
     const modeSwitch = document.getElementById('modeSwitch');
+    const displayUserName = document.getElementById('displayUserName')
 
     if (!elementUserName || !logoImg || !modeSwitch) {
         console.error('One or more elements not found:', {
@@ -16,8 +17,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (userName) {
         elementUserName.innerHTML = `Hello Game Changer ${userName}!`;
+        displayUserName.textContent = userName;
     }
-
     let next = document.querySelector('.next');
     let prev = document.querySelector('.prev');
     let slider = document.querySelector('.events-slider');

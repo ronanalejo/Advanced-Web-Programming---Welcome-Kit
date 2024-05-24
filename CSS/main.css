@@ -113,6 +113,10 @@ nav li:first-child {
 .nav-sidebar a {
     width: 100%;
 }
+#displayUserName{
+    margin-left: -300px;
+    font-weight: bolder;
+}
 #menu-btn {
     display: none;
 }
