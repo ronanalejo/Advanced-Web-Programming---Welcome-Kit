@@ -1,161 +1,223 @@
-document.addEventListener('DOMContentLoaded', function() {
-  const modeSwitch = document.getElementById('modeSwitch');
-  const nameForm = document.getElementById('nameForm');
-  const nameInput = document.getElementById('nameInput');
-  const yearLevel = document.getElementById('yearLevel');
-  const courses = document.getElementById('courses');
-  const submitButton = document.getElementById('submitButton');
-  const errorMessage = document.getElementById('errorMessage');
-  const personalizedMessage = document.getElementById('personalizedMessage');
-  const welcomeSection = document.getElementById('welcome');
-  const contentSection = document.getElementById('content');
-  const logoImg = document.querySelector('.logo-img');
-  const cursor = document.querySelector(".cursor");
-  var timeout;
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+import { getFirestore, setDoc, doc } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
-//follow cursor on mousemove
-document.addEventListener("mousemove", (e) => {
-    let x = e.pageX;
-    let y = e.pageY;
+const firebaseConfig = {
+    apiKey: "AIzaSyA_lj8R6cH51Te8puIckfvFtRnwKO0998g",
+    authDomain: "shaun-supremacy-57163.firebaseapp.com",
+    projectId: "shaun-supremacy-57163",
+    storageBucket: "shaun-supremacy-57163.appspot.com",
+    messagingSenderId: "653782344536",
+    appId: "1:653782344536:web:a1d09b69e90d8fb11bbb2d",
+    measurementId: "G-085N2Z09JS"
+  };
+  
 
-    cursor.style.top = y + "px";
-    cursor.style.left = x + "px";
-    cursor.style.display= "block";
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
 
-//cursor effects on mousestop
-function mouseStopped(){
-    cursor.style.display = "none";
+export async function storeUserData(userName, userYearLevel, userCourse) {
+    try {
+      const userData = {
+        name: userName,
+        yearLevel: userYearLevel,
+        course: userCourse
+      };
+      const docRef = doc(db, "users", userName); 
+      console.log("DocRef:", docRef);  
+      console.log("UserData:", userData); 
+  
+      await setDoc(docRef, userData); 
+      console.log("Document written with ID: ", userName);
+    } catch (e) {
+      console.error("Error adding document: ", e);
     }
-   clearTimeout(timeout);
-   timeout = setTimeout(mouseStopped, 1000);
-});
+  }
 
-//cursor effects on mouseout
-document.addEventListener("mouseout", () => {
-    cursor.style.display = "none";
-});
+document.addEventListener('DOMContentLoaded', function() {
+    const modeSwitch = document.getElementById('modeSwitch');
+    const nameForm = document.getElementById('nameForm');
+    const nameInput = document.getElementById('nameInput');
+    const yearLevelSelect = document.getElementById('yearLevel');
+    const coursesSelect = document.getElementById('courses'); 
+    const submitButton = document.getElementById('submitButton');
+    const errorMessage = document.getElementById('errorMessage');
+    const logoImg = document.querySelector('.logo-img');
+    const cursor = document.querySelector(".cursor");
+    var timeout;
 
-  // SHS Couorses (Opt Dropdown Select)
-  const shsCourses = [
-      { value: 'shs-abm', text: 'Accountancy, Business and Management' },
-      { value: 'shs-ani', text: 'Animation' },
-      { value: 'shs-artsDesign', text: 'Arts and Design' },
-      { value: 'shs-audoProd', text: 'Audio Production' },
-      { value: 'shs-sd', text: 'Software Development' },
-      { value: 'shs-fd', text: 'Fashion Design' },
-      { value: 'shs-graphIllu', text: 'Graphic Illustration' },
-      { value: 'shs-humss', text: 'Humanities and Social Sciences' },
-      { value: 'shs-robotics', text: 'Robotics' }
-  ];
+    // Cursor follow and mouse effects
+    if (cursor) {
+        document.addEventListener("mousemove", (e) => {
+            let x = e.pageX;
+            let y = e.pageY;
 
-  // College Couorses (Opt Dropdown Select)
-  const collegeCourses = [
-      {
-          label: 'School Of Computing (SOC)',
-          options: [
-              { value: 'SOC-software', text: 'Software Engineering' },
-              { value: 'SOC-cloud', text: 'Cloud Engineering' },
-              { value: 'SOC-web', text: 'Web Development' },
-              { value: 'SOC-game', text: 'Game Development' },
-              { value: 'SOC-data', text: 'Data Science' }
-          ]
-      },
-      {
-          label: 'School Of Design and Arts (SODA)',
-          options: [
-              { value: 'SODA-multimedia', text: 'Multimedia Arts' },
-              { value: 'SODA-fashion', text: 'Fashion Design' },
-              { value: 'SODA-animation', text: 'Animation' },
-              { value: 'SODA-music', text: 'Music Production' },
-              { value: 'SODA-film', text: 'Film and Visual Effects' }
-          ]
-      },
-      {
-          label: 'School of Business and Liberal Arts (SBLA)',
-          options: [
-              { value: 'SBLA-marketing', text: 'Marketing Management' },
-              { value: 'SBLA-e-management', text: 'E-Management' },
-              { value: 'SBLA-real-estate', text: 'Real Estate Management' },
-              { value: 'SBLA-psychology', text: 'Psychology' },
-              { value: 'SBLA-accountancy', text: 'Accountancy' }
-          ]
-      }
-  ];
+            cursor.style.top = y + "px";
+            cursor.style.left = x + "px";
+            cursor.style.display = "block";
 
-  // Function to show specific Courses depends on the selected Year Level
-  function updateCourses() {
-    const yearLevelValue = yearLevel.value;
-    courses.innerHTML = '<option value="">Select Course</option>';
-
-    if (yearLevelValue === 'shs') {
-        shsCourses.forEach(course => {
-            const option = document.createElement('option');
-            option.value = course.value;
-            option.textContent = course.text;
-            courses.add(option);
+            function mouseStopped() {
+                cursor.style.display = "none";
+            }
+            clearTimeout(timeout);
+            timeout = setTimeout(mouseStopped, 1000);
         });
-    } else if (yearLevelValue === 'college') {
-        collegeCourses.forEach(group => {
-            const optgroup = document.createElement('optgroup');
-            optgroup.label = group.label;
-            group.options.forEach(course => {
+
+        document.addEventListener("mouseout", () => {
+            cursor.style.display = "none";
+        });
+    } else {
+        console.error('Cursor element not found');
+    }
+
+    // Light Mode and Dark Mode Toggle
+    if (modeSwitch) {
+        modeSwitch.addEventListener('change', function() {
+            if (modeSwitch.checked) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                if (logoImg) {
+                    logoImg.src = './IMG/nav-logo-white.png'; // Path to the dark mode logo
+                } else {
+                    console.error('Logo image element not found');
+                }
+            } else {
+                document.documentElement.setAttribute('data-theme', 'light');
+                if (logoImg) {
+                    logoImg.src = './IMG/nav-logo-blue.png'; // Path to the light mode logo
+                } else {
+                    console.error('Logo image element not found');
+                }
+            }
+        });
+    } else {
+        console.error('Mode switch element not found');
+    }
+
+    // SHS and College Courses
+    const shsCourses = [
+        { value: 'shs-abm', text: 'Accountancy, Business and Management' },
+        { value: 'shs-ani', text: 'Animation' },
+        { value: 'shs-artsDesign', text: 'Arts and Design' },
+        { value: 'shs-audoProd', text: 'Audio Production' },
+        { value: 'shs-sd', text: 'Software Development' },
+        { value: 'shs-fd', text: 'Fashion Design' },
+        { value: 'shs-graphIllu', text: 'Graphic Illustration' },
+        { value: 'shs-humss', text: 'Humanities and Social Sciences' },
+        { value: 'shs-robotics', text: 'Robotics' }
+    ];
+
+    const collegeCourses = [
+        {
+            label: 'School Of Computing (SOC)',
+            options: [
+                { value: 'SOC-software', text: 'Software Engineering' },
+                { value: 'SOC-cloud', text: 'Cloud Engineering' },
+                { value: 'SOC-web', text: 'Web Development' },
+                { value: 'SOC-game', text: 'Game Development' },
+                { value: 'SOC-data', text: 'Data Science' }
+            ]
+        },
+        {
+            label: 'School Of Design and Arts (SODA)',
+            options: [
+                { value: 'SODA-multimedia', text: 'Multimedia Arts' },
+                { value: 'SODA-fashion', text: 'Fashion Design' },
+                { value: 'SODA-animation', text: 'Animation' },
+                { value: 'SODA-music', text: 'Music Production' },
+                { value: 'SODA-film', text: 'Film and Visual Effects' }
+            ]
+        },
+        {
+            label: 'School of Business and Liberal Arts (SBLA)',
+            options: [
+                { value: 'SBLA-marketing', text: 'Marketing Management' },
+                { value: 'SBLA-e-management', text: 'E-Management' },
+                { value: 'SBLA-real-estate', text: 'Real Estate Management' },
+                { value: 'SBLA-psychology', text: 'Psychology' },
+                { value: 'SBLA-accountancy', text: 'Accountancy' }
+            ]
+        }
+    ];
+
+    // Function to show specific Courses depending on the selected Year Level
+    function updateCourses() {
+        const yearLevelValue = yearLevelSelect.value; // Use yearLevelSelect
+        coursesSelect.innerHTML = '<option value="">Select Course</option>'; // Use coursesSelect
+
+        if (yearLevelValue === 'shs') {
+            shsCourses.forEach(course => {
                 const option = document.createElement('option');
                 option.value = course.value;
                 option.textContent = course.text;
-                optgroup.appendChild(option);
+                coursesSelect.add(option); // Use coursesSelect
             });
-            courses.appendChild(optgroup);
-        });
-    }
-    validateForm();
-}
-
-    nameInput.addEventListener('input', validateForm);
-    yearLevel.addEventListener('change', updateCourses);
-    courses.addEventListener('change', validateForm);
-    
-      // Light Mode and Dark Mode
-      modeSwitch.addEventListener('change', function() {
-        if (modeSwitch.checked) {
-            document.documentElement.setAttribute('data-theme', 'dark');
-            logoImg.src = './IMG/nav-logo-white.png'; // Path to the dark mode logo
-        } else {
-            document.documentElement.setAttribute('data-theme', 'light');
-            logoImg.src = './IMG/nav-logo-blue.png'; // Path to the light mode logo
+        } else if (yearLevelValue === 'college') {
+            collegeCourses.forEach(group => {
+                const optgroup = document.createElement('optgroup');
+                optgroup.label = group.label;
+                group.options.forEach(course => {
+                    const option = document.createElement('option');
+                    option.value = course.value;
+                    option.textContent = course.text;
+                    optgroup.appendChild(option);
+                });
+                coursesSelect.appendChild(optgroup); // Use coursesSelect
+            });
         }
-    });
-});
+        validateForm();
+    }
 
+    // Form Validation
+    function validateForm() {
+        if (nameInput.value && yearLevelSelect.value && coursesSelect.value) { // Use yearLevelSelect and coursesSelect
+            submitButton.disabled = false;
+            errorMessage.style.display = 'none';
+        } else {
+            submitButton.disabled = true;
+        }
+    }
 
-
-  // Submit button can't be selected unless all fields (Full Name input, Year Level input, Courses input) are selected
-  function validateForm() {
-      if (nameInput.value && yearLevel.value && courses.value) {
-          submitButton.disabled = false;
-          errorMessage.style.display = 'none';
-      } else {
-          submitButton.disabled = true;
-      }
-  }
-
-  
-  nameForm.addEventListener('submit', function(event) {
-    if (!nameInput.value || !yearLevel.value || !courses.value) {
-        event.preventDefault();
-        errorMessage.style.display = 'block';
+    if (nameInput && yearLevelSelect && coursesSelect && submitButton && errorMessage) { // Use yearLevelSelect and coursesSelect
+        nameInput.addEventListener('input', validateForm);
+        yearLevelSelect.addEventListener('change', updateCourses); // Use yearLevelSelect
+        coursesSelect.addEventListener('change', validateForm); // Use coursesSelect
     } else {
-        event.preventDefault();
-        errorMessage.style.display = 'none';
-        const userName = nameInput.value;
-        const userYearLevel = yearLevel.options[yearLevel.selectedIndex].text;
-        const userCourse = courses.options[courses.selectedIndex].text;
+        console.error('Form elements not found');
+    }
 
-        // Store user data in local storage
-        localStorage.setItem('userName', userName);
-        localStorage.setItem('userYearLevel', userYearLevel);
-        localStorage.setItem('userCourse', userCourse);
+    // Form Submission
+    if (nameForm) {
+        nameForm.addEventListener('submit', async function(event) {
+            event.preventDefault();
+            if (!nameInput.value || !yearLevelSelect.value || !coursesSelect.value) { // Use yearLevelSelect and coursesSelect
+                errorMessage.style.display = 'block';
+            } else {
+                errorMessage.style.display = 'none';
+                const userName = nameInput.value;
+                const userYearLevel = yearLevelSelect.options[yearLevelSelect.selectedIndex].text; // Use yearLevelSelect
+                const userCourse = coursesSelect.options[coursesSelect.selectedIndex].text; // Use coursesSelect
 
-        // Redirect to main.html
-        window.location.href = 'main.html';
+                try {
+                    console.log("Submitting data to Firestore...");
+                    // Store user data in Firestore
+                    await storeUserData(userName, userYearLevel, userCourse);
+                    console.log("Data successfully submitted to Firestore.");
+
+                    // Optionally store user data in local storage
+                    localStorage.setItem('userName', userName);
+                    localStorage.setItem('userYearLevel', userYearLevel);
+                    localStorage.setItem('userCourse', userCourse);
+
+                    // Redirect to main.html
+                    window.location.href = 'main.html';
+                } catch (error) {
+                    console.error("Error storing user data: ", error);
+                    errorMessage.textContent = 'An error occurred while saving your data. Please try again.';
+                    errorMessage.style.display = 'block';
+                }
+            }
+        });
+    } else {
+        console.error('Name form element not found');
     }
 });
