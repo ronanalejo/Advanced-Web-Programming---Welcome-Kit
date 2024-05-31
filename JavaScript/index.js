@@ -1,38 +1,46 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-import { getFirestore, setDoc, doc } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+document.addEventListener('DOMContentLoaded', function() {
+    const nameForm = document.getElementById('nameForm');
+    const nameInput = document.getElementById('nameInput');
+    const yearLevelSelect = document.getElementById('yearLevel');
+    const coursesSelect = document.getElementById('courses');
+    const submitButton = document.getElementById('submitButton');
+    const errorMessage = document.getElementById('errorMessage');
 
-const firebaseConfig = {
-    apiKey: "AIzaSyA_lj8R6cH51Te8puIckfvFtRnwKO0998g",
-    authDomain: "shaun-supremacy-57163.firebaseapp.com",
-    projectId: "shaun-supremacy-57163",
-    storageBucket: "shaun-supremacy-57163.appspot.com",
-    messagingSenderId: "653782344536",
-    appId: "1:653782344536:web:a1d09b69e90d8fb11bbb2d",
-    measurementId: "G-085N2Z09JS"
-  };
-  
+    // Form Submission
+    if (nameForm) {
+        nameForm.addEventListener('submit', async function(event) {
+            event.preventDefault();
+            if (!nameInput.value || !yearLevelSelect.value || !coursesSelect.value) {
+                errorMessage.style.display = 'block';
+            } else {
+                errorMessage.style.display = 'none';
+                const userName = nameInput.value;
+                const userYearLevel = yearLevelSelect.options[yearLevelSelect.selectedIndex].text;
+                const userCourse = coursesSelect.options[coursesSelect.selectedIndex].text;
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
+                try {
+                    console.log("Submitting data to Firestore...");
+                    await storeUserData(userName, userYearLevel, userCourse);
+                    console.log("Data successfully submitted to Firestore.");
 
-export async function storeUserData(userName, userYearLevel, userCourse) {
-    try {
-      const userData = {
-        name: userName,
-        yearLevel: userYearLevel,
-        course: userCourse
-      };
-      const docRef = doc(db, "users", userName); 
-      console.log("DocRef:", docRef);  
-      console.log("UserData:", userData); 
-  
-      await setDoc(docRef, userData); 
-      console.log("Document written with ID: ", userName);
-    } catch (e) {
-      console.error("Error adding document: ", e);
+                    // Optionally store user data in local storage
+                    localStorage.setItem('userName', userName);
+                    localStorage.setItem('userYearLevel', userYearLevel);
+                    localStorage.setItem('userCourse', userCourse);
+
+                    // Redirect to main.html
+                    window.location.href = 'main.html';
+                } catch (error) {
+                    console.error("Error storing user data: ", error);
+                    errorMessage.textContent = 'An error occurred while saving your data. Please try again.';
+                    errorMessage.style.display = 'block';
+                }
+            }
+        });
+    } else {
+        console.error('Name form element not found');
     }
-  }
+});
 
 document.addEventListener('DOMContentLoaded', function() {
     const modeSwitch = document.getElementById('modeSwitch');
@@ -199,7 +207,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 try {
                     console.log("Submitting data to Firestore...");
-                    // Store user data in Firestore
                     await storeUserData(userName, userYearLevel, userCourse);
                     console.log("Data successfully submitted to Firestore.");
 
