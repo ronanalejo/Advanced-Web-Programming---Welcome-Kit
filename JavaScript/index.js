@@ -1,3 +1,5 @@
+import { storeUserData } from './firebase.js';
+
 document.addEventListener('DOMContentLoaded', function() {
     const nameForm = document.getElementById('nameForm');
     const nameInput = document.getElementById('nameInput');
