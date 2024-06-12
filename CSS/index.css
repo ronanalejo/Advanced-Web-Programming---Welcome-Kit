@@ -34,6 +34,7 @@ body {
     color: var(--text-color);
     border-color: var(--text-color);
     transition: 1s;
+    cursor: none;
   }
   select#yearLevel {
     display: flex;

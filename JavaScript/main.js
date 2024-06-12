@@ -2,7 +2,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const elementUserName = document.getElementById('elementUserName');
     const logoImg = document.querySelector('.logo-img');
     const modeSwitch = document.getElementById('modeSwitch');
-    const displayUserName = document.getElementById('displayUserName')
+    const displayUserName = document.getElementById('displayUserName');
+    const nbpen = document.getElementById('nbpen');
 
     if (!elementUserName || !logoImg || !modeSwitch) {
         console.error('One or more elements not found:', {
@@ -33,7 +34,35 @@ document.addEventListener('DOMContentLoaded', function() {
         slider.prepend(slides[slides.length -1]);
     })
 
+    var o = $(".card");
+$(".top").on("mousemove", function (t) {
+    var cardOffset = o.offset();
+    var cardCenterX = cardOffset.left + o.outerWidth() / 2;
+    var cardCenterY = cardOffset.top + o.outerHeight() / 2;
+    var distanceX = Math.abs(t.pageX - cardCenterX);
+    var distanceY = Math.abs(t.pageY - cardCenterY);
+    var maxDistance = 500;
 
+    if (distanceX < maxDistance && distanceY < maxDistance) {
+
+        var e = -(cardCenterX - t.pageX) / 20;
+        var n = (cardCenterY - t.pageY) / 20;
+
+        o.css({
+            "transform": "rotateY(" + e + "deg) rotateX(" + n + "deg)",
+            "-webkit-transform": "rotateY(" + e + "deg) rotateX(" + n + "deg)",
+            "-moz-transform": "rotateY(" + e + "deg) rotateX(" + n + "deg)"
+        });
+    } else {
+        o.css({
+            "transform": "rotateY(0deg) rotateX(0deg)",
+            "-webkit-transform": "rotateY(0deg) rotateX(0deg)",
+            "-moz-transform": "rotateY(0deg) rotateX(0deg)"
+        });
+    }
+});
+
+    
 
     // Nav bar scroll behavior
     const navLinkEls = document.querySelectorAll('.nav-link');
@@ -62,10 +91,16 @@ document.addEventListener('DOMContentLoaded', function() {
             document.documentElement.setAttribute('data-theme', 'dark');
             logoImg.src = './IMG/nav-logo-white.png'; // Path to the dark mode logo
             console.log('Dark mode enabled, logo changed to white');
+            nbpen.style.backgroundImage = 'url(./IMG/nbpen-black.png)'; // Path to the dark mode logo
+            console.log('Dark mode enabled, nbpen changed to black');
+            displayUserName.style.color = 'white';
         } else {
             document.documentElement.setAttribute('data-theme', 'light');
             logoImg.src = './IMG/nav-logo-blue.png'; // Path to the light mode logo
             console.log('Light mode enabled, logo changed to blue');
+            nbpen.style.backgroundImage = 'url(./IMG/nbpen-white.png)'; // Path to the light mode logo
+            console.log('Light mode enabled, nbpen changed to white');
+            displayUserName.style.color = 'black';
         }
     });
 });
@@ -98,3 +133,4 @@ function hideSidebar() {
     const sidebar = document.querySelector('.nav-sidebar')
     sidebar.style.display = 'none'
 }
+
