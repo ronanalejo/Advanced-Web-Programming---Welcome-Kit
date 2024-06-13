@@ -706,7 +706,7 @@ nav li:first-child {
     position: absolute;
     top: 45%;
     transform: rotate(270deg);
-    transition: 0.7s;
+    transition: 0.7s ease;
 }
 
 .details {
