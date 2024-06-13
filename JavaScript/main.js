@@ -138,3 +138,11 @@ function hideSidebar() {
     sidebar.style.display = 'none'
 }
 
+// Organization Slider Function
+
+// jQuery(document).ready(function($){
+//     $('.slider-img') on('click', function() {
+//         $('.slider-img').removeClass('active');
+//         $(this).addClass('active');
+//     })
+// })
