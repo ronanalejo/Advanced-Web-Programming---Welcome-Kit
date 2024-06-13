@@ -115,7 +115,7 @@ window.onscroll = () => {
 
         // Adjust offset based on section height
         let topOffset = sec.offsetTop - (height < windowHeight * 0.5 ? 690 : 750);
-        let bottomOffset = sec.offsetTop + height - (height < windowHeight * 0.5 ? 50 : 750);
+        let bottomOffset = sec.offsetTop + height - (height < windowHeight * 0.5 ? 50 : 550);
 
         if (top >= topOffset && top < bottomOffset) {
             sec.classList.add('show-animate');
