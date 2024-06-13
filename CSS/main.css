@@ -618,14 +618,10 @@ nav li:first-child {
     transform: translateX(0);
 }
 
-/* --------------- OTHERS --------------- */
-.section:nth-child(9) {
-    color: var(--card-text-color);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    overflow: hidden;
+/* --------------- OTHERS (FIRST DAY MUST HAVES) --------------- */
+#others-must-haves {
+    height: 50vh;
+    margin-bottom: 10%;
 }
 
 .top {
@@ -684,6 +680,7 @@ nav li:first-child {
     font-weight: 100;
     transform: translateZ(80px);
     text-shadow: 2px 2px 5px #292929;
+    color: var(--card-text-color);
 }
 
 .card span{
@@ -694,12 +691,33 @@ nav li:first-child {
     font-weight: 400;
     transform: translateZ(40px);
     text-shadow: 2px 2px 5px #292929;
+    color: var(--card-text-color);
 }
 
 img{
     margin: auto;
     display: block;
 }
+
+/* --------------- OTHERS (SPECS) --------------- */
+
+#others-specs {
+    height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--text-color);
+    transition: color 0.3s;
+}
+
+
+
+
+
+
+
 /* --------------- FOOTER --------------- */
 .footer{
     background-color: var(--header-background);

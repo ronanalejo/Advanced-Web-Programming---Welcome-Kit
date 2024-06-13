@@ -149,7 +149,7 @@ body {
 /* The slider */
 .slider {
   position: absolute;
-  cursor: pointer;
+  cursor: none;
   top: 0;
   left: 0;
   right: 0;
