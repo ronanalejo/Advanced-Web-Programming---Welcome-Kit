@@ -102,7 +102,7 @@
 
     <!------------------------------ HOME ------------------------------>
     <main class="main">
-        <section class="section" id="home">
+        <section class="section scroll-section" id="home">
             <div class="hexagon-container">
                 <div class="hexagon">
                     <div class="hexagon-content">
@@ -116,7 +116,7 @@
         </section>
 
         <!------------------------------ ABOUT ------------------------------>
-        <section class="section" id="about">
+        <section class="section scroll-section" id="about">
             <div class="hexagon-container">
                 <div class="hexagon">
                     <div class="hexagon-content">
@@ -127,7 +127,7 @@
         </section>
 
         <!------------------------------ CAMPUS ------------------------------>
-        <section class="section" id="campus">
+        <section class="section scroll-section" id="campus">
             <div class="hexagon-container">
                 <div class="hexagon">
                     <div class="hexagon-content">
@@ -159,7 +159,7 @@
         </section>
 
         <!------------------------------ MEET THE FAMILY ------------------------------>
-        <section class="section" id="meet">
+        <section class="section scroll-section" id="meet">
             <div id="meetTheFamily">
 
                 <h1 class="heading">MEET THE FAMILY</h1>
@@ -301,7 +301,122 @@
         </section>
 
         <!------------------------------ FACILITIES ------------------------------>
-        <section class="section" id="facilities">
+        <!-----<section class="section" id="facilities">
+            <h2 class="heading">Our Facilities</h2>
+            <div class="facilities-container">
+            
+                <div class="floor-item" onclick="toggleVisibility('ground-floor-details')">GROUND FLOOR</div>
+                <div id="ground-floor-details" class="floor-details hidden">
+                    <div class="detail-item">Building Lobby & Turnstile System</div>
+                    <div class="detail-item">Equipment Center</div>
+                    <div class="detail-item">Partner’s Hive</div>
+                    <div class="detail-item">Gamers Hive</div>
+                    <div class="detail-item">ATM Machine</div>
+                    <div class="detail-item">Admissions</div>
+                    <div class="detail-item">Registrar</div>
+                    <div class="detail-item">Finance</div>
+                    <div class="detail-item">Clinic</div>
+                    <button onclick="showFloors()">Back to Floors</button>
+                </div>
+            
+                <div class="floor-item" onclick="toggleVisibility('mezzanine-details')">MEZZANINE</div>
+                <div id="mezzanine-details" class="floor-details hidden">
+                    <div class="detail-item">Meeting Rooms</div>
+                    <div class="detail-item">OSAS</div>
+                    <div class="detail-item">Guidance Office</div>
+                    <div class="detail-item">Scholarships Department</div>
+                    <div class="detail-item">ELPD</div>
+                    <div class="detail-item">IT Department</div>
+                    <div class="detail-item">HR Department</div>
+                    <div class="detail-item">Executive Office</div>
+                    <button onclick="showFloors()">Back to Floors</button>
+                </div>
+            
+                <div class="floor-item" onclick="toggleVisibility('second-to-fourth-details')">SECOND-FOURTH FLOOR</div>
+                <div id="second-to-fourth-details" class="floor-details hidden">
+                    <div class="detail-item">Parking Area</div>
+                    <div class="detail-item">Building Admin Office</div>
+                    <div class="detail-item">Purchasing Department</div>
+                    <div class="detail-item">Facilities Stock Room</div>
+                    <button onclick="showFloors()">Back to Floors</button>
+                </div>
+            
+                <div class="floor-item" onclick="toggleVisibility('fifth-floor-details')">FIFTH FLOOR</div>
+                <div id="fifth-floor-details" class="floor-details hidden">
+                    <div class="detail-item">Cafeteria</div>
+                    <div class="detail-item">Grass Area / Student Lounge</div>
+                    <div class="detail-item">Employee Lounge</div>
+                    <button onclick="showFloors()">Back to Floors</button>
+                </div>
+        
+                <div class="floor-item" onclick="toggleVisibility('sixth-floor-details')">SIXTH FLOOR</div>
+                <div id="sixth-floor-details" class="floor-details hidden">
+                    <div class="detail-item">SHS Library</div>
+                    <button onclick="showFloors()">Back to Floors</button>
+                </div>
+            
+                <div class="floor-item" onclick="toggleVisibility('seventh-floor-details')">SEVENTH FLOOR</div>
+                <div id="seventh-floor-details" class="floor-details hidden">
+                    <div class="detail-item">Sewing Room</div>
+                    <div class="detail-item">Pink Room / Fashion Design Room</div>
+                    <div class="detail-item">Green Room</div>
+                    <div class="detail-item">Sound Room</div>
+                    <div class="detail-item">Multimedia Arts Laboratory</div>
+                    <button onclick="showFloors()">Back to Floors</button>
+                </div>
+        
+                <div class="floor-item" onclick="toggleVisibility('eighth-floor-details')">EIGHTH FLOOR</div>
+                <div id="eighth-floor-details" class="floor-details hidden">
+                    <div class="detail-item">Faculty Room</div>
+                    <div class="detail-item">MMA Laboratory</div>
+                    <div class="detail-item">Academics Department</div>
+                    <button onclick="showFloors()">Back to Floors</button>
+                </div>
+            
+                <div class="floor-item" onclick="toggleVisibility('ninth-floor-details')">NINTH FLOOR</div>
+                <div id="ninth-floor-details" class="floor-details hidden">
+                    <div class="detail-item">College Library</div>
+                    <button onclick="showFloors()">Back to Floors</button>
+                </div>
+            
+                <div class="floor-item" onclick="toggleVisibility('tenth-floor-details')">TENTH FLOOR</div>
+                <div id="tenth-floor-details" class="floor-details hidden">
+                    <div class="detail-item">Lightbox Room</div>
+                    <div class="detail-item">Mac Laboratory</div>
+                    <div class="detail-item">Cintiq Laboratory</div>
+                    <div class="detail-item">Unity Game Laboratory</div>
+                    <div class="detail-item">MPSD Laboratory</div>
+                    <div class="detail-item">Wet and Dry Drawing Room</div>
+                    <div class="detail-item">Chemistry and Physics Laboratory</div>
+                    <div class="detail-item">Multimedia Arts Laboratory</div>
+                    <button onclick="showFloors()">Back to Floors</button>
+                </div>
+            
+                <div class="floor-item" onclick="toggleVisibility('twelfth-floor-details')">TWELVETH FLOOR</div>
+                <div id="twelfth-floor-details" class="floor-details hidden">
+                    <div class="detail-item">Auditorium</div>
+                    <div class="detail-item">Multipurpose Hall</div>
+                    <div class="detail-item">Nexus Gallery</div>
+                    <button onclick="showFloors()">Back to Floors</button>
+                </div>
+            
+                <div class="floor-item" onclick="toggleVisibility('lower-penthouse-details')">LOWER PENTHOUSE</div>
+                <div id="lower-penthouse-details" class="floor-details hidden">
+                    <div class="detail-item">Gymnasium</div>
+                    <div class="detail-item">PE Room</div>
+                    <div class="detail-item">Garden Deck (East Wing / West Wing)</div>
+                    <button onclick="showFloors()">Back to Floors</button>
+                </div>
+            
+                <div class="floor-item" onclick="toggleVisibility('upper-penthouse-details')">UPPER PENTHOUSE</div>
+                <div id="upper-penthouse-details" class="floor-details hidden">
+                    <div class="detail-item">Running Track</div>
+                    <div class="detail-item">Library</div>
+                    <button onclick="showFloors()">Back to Floors</button>
+                </div>
+            </div>
+        </section> --->
+        <section class="section scroll-section" id="facilities">
             <div class="facilities-container">
 
                 <section class="section" id="events-header">
@@ -378,304 +493,18 @@
             <div class="faci-preview">
 
                 <div class="preview" data-target="p-1">
-                    <i class="fas fa-times"></i>
-                    <div class="image-container">
-                        <div class="image-grid">
-                            <div class="image-item">
-                                <img src="IMG/FACILITIES/NEXUS - MAKATI.JPG"  class="faci-container" alt="">
-                                <h3 class="image-name">Turnstile System</h3>
-                            </div>
-                            <div class="image-item">
-                                <img src="IMG/FACILITIES/PARTNERS HIVE - MAKATI.JPG" class="faci-container"  alt="">
-                                <h3 class="image-name">Partner's Hive</h3>
-                            </div>
-                            <div class="image-item">
-                                <img src="IMG/FACILITIES/PARTNERS HIVE - MAKATI.JPG" class="faci-container"  alt="">
-                                <h3 class="image-name">Gamer's Hive</h3>
-                            </div>
-                            <div class="image-item">
-                                <img src="IMG/FACILITIES/NEXUS - MAKATI.JPG"  class="faci-container" alt="">
-                                <h3 class="image-name">Equipment Center</h3>
-                            </div>
-                            <div class="image-item">
-                                <img src="IMG/FACILITIES/NEXUS - MAKATI.JPG"  class="faci-container" alt="">
-                                <h3 class="image-name">Clinic</h3>
-                            </div>
-                            <div class="image-item">
-                                <img src="IMG/FACILITIES/PARTNERS HIVE - MAKATI.JPG" class="faci-container"  alt="">
-                                <h3 class="image-name">Admissions</h3>
-                            </div>
-                            <div class="image-item">
-                                <img src="IMG/FACILITIES/NEXUS - MAKATI.JPG"  class="faci-container" alt="">
-                                <h3 class="image-name">Registrar</h3>
-                            </div>
-                            <div class="image-item">
-                                <img src="IMG/FACILITIES/PARTNERS HIVE - MAKATI.JPG" class="faci-container"  alt="">
-                                <h3 class="image-name">Finance</h3>
-                            </div>
-                            <div class="image-item">
-                                <img src="IMG/FACILITIES/NEXUS - MAKATI.JPG"  class="faci-container" alt="">
-                                <h3 class="image-name">ATM Machine</h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="preview" data-target="p-2">
-                    <i class="fas fa-times"></i>
-                    <div class="image-container">
-                        <div class="image-grid">
-                            <div class="image-item">
-                                <img src="IMG/FACILITIES/NEXUS - MAKATI.JPG"  class="faci-container" alt="">
-                                <h3 class="image-name">Meeting Rooms</h3>
-                            </div>
-                            <div class="image-item">
-                                <img src="IMG/FACILITIES/PARTNERS HIVE - MAKATI.JPG" class="faci-container"  alt="">
-                                <h3 class="image-name">OSAS</h3>
-                            </div>
-                            <div class="image-item">
-                                <img src="IMG/FACILITIES/PARTNERS HIVE - MAKATI.JPG" class="faci-container"  alt="">
-                                <h3 class="image-name">Guidance Office</h3>
-                            </div>
-                            <div class="image-item">
-                                <img src="IMG/FACILITIES/NEXUS - MAKATI.JPG"  class="faci-container" alt="">
-                                <h3 class="image-name">ELPD</h3>
-                            </div>
-                            <div class="image-item">
-                                <img src="IMG/FACILITIES/NEXUS - MAKATI.JPG"  class="faci-container" alt="">
-                                <h3 class="image-name">IT Department</h3>
-                            </div>
-                            <div class="image-item">
-                                <img src="IMG/FACILITIES/PARTNERS HIVE - MAKATI.JPG" class="faci-container"  alt="">
-                                <h3 class="image-name">HR Department</h3>
-                            </div>
-                            <div class="image-item">
-                                <img src="IMG/FACILITIES/NEXUS - MAKATI.JPG"  class="faci-container" alt="">
-                                <h3 class="image-name">Executive Office</h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="preview" data-target="p-3">
-                    <i class="fas fa-times"></i>
-                    <div class="image-container">
-                        <div class="image-grid">
-                            <div class="image-item">
-                                <img src="IMG/FACILITIES/NEXUS - MAKATI.JPG"  class="faci-container" alt="">
-                                <h3 class="image-name">Parking Area</h3>
-                            </div>
-                            <div class="image-item">
-                                <img src="IMG/FACILITIES/PARTNERS HIVE - MAKATI.JPG" class="faci-container"  alt="">
-                                <h3 class="image-name">Building Admin Office</h3>
-                            </div>
-                            <div class="image-item">
-                                <img src="IMG/FACILITIES/PARTNERS HIVE - MAKATI.JPG" class="faci-container"  alt="">
-                                <h3 class="image-name">Purchasing Department</h3>
-                            </div>
-                            <div class="image-item">
-                                <img src="IMG/FACILITIES/NEXUS - MAKATI.JPG"  class="faci-container" alt="">
-                                <h3 class="image-name">Facilities Stock Room</h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="preview" data-target="p-4">
-                    <i class="fas fa-times"></i>
-                    <div class="image-container">
-                        <div class="image-grid">
-                            <div class="image-item">
-                                <img src="IMG/FACILITIES/NEXUS - MAKATI.JPG"  class="faci-container" alt="">
-                                <h3 class="image-name">Cafeteria</h3>
-                            </div>
-                            <div class="image-item">
-                                <img src="IMG/FACILITIES/PARTNERS HIVE - MAKATI.JPG" class="faci-container"  alt="">
-                                <h3 class="image-name">Grass Area / Student Lounge</h3>
-                            </div>
-                            <div class="image-item">
-                                <img src="IMG/FACILITIES/PARTNERS HIVE - MAKATI.JPG" class="faci-container"  alt="">
-                                <h3 class="image-name">Employee Lounge</h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="preview" data-target="p-5">
-                    <i class="fas fa-times"></i>
-                    <div class="image-container">
-                        <div class="image-grid">
-                            <div class="image-item">
-                                <img src="IMG/FACILITIES/NEXUS - MAKATI.JPG"  class="faci-container" alt="">
-                                <h3 class="image-name">SHS Library</h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="preview" data-target="p-6">
-                    <i class="fas fa-times"></i>
-                    <div class="image-container">
-                        <div class="image-grid">
-                            <div class="image-item">
-                                <img src="IMG/FACILITIES/NEXUS - MAKATI.JPG"  class="faci-container" alt="">
-                                <h3 class="image-name">Sewing Room</h3>
-                            </div>
-                            <div class="image-item">
-                                <img src="IMG/FACILITIES/PARTNERS HIVE - MAKATI.JPG" class="faci-container"  alt="">
-                                <h3 class="image-name">Pink Room / Fashion Design Room</h3>
-                            </div>
-                            <div class="image-item">
-                                <img src="IMG/FACILITIES/PARTNERS HIVE - MAKATI.JPG" class="faci-container"  alt="">
-                                <h3 class="image-name">Green Room</h3>
-                            </div>
-                            <div class="image-item">
-                                <img src="IMG/FACILITIES/NEXUS - MAKATI.JPG"  class="faci-container" alt="">
-                                <h3 class="image-name">Sound Room</h3>
-                            </div>
-                            <div class="image-item">
-                                <img src="IMG/FACILITIES/NEXUS - MAKATI.JPG"  class="faci-container" alt="">
-                                <h3 class="image-name">Multimedia Arts Laboratory</h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="preview" data-target="p-7">
-                    <i class="fas fa-times"></i>
-                    <div class="image-container">
-                        <div class="image-grid">
-                            <div class="image-item">
-                                <img src="IMG/FACILITIES/NEXUS - MAKATI.JPG"  class="faci-container" alt="">
-                                <h3 class="image-name">Faculty Room</h3>
-                            </div>
-                            <div class="image-item">
-                                <img src="IMG/FACILITIES/PARTNERS HIVE - MAKATI.JPG" class="faci-container"  alt="">
-                                <h3 class="image-name">MMA Laboratory</h3>
-                            </div>
-                            <div class="image-item">
-                                <img src="IMG/FACILITIES/PARTNERS HIVE - MAKATI.JPG" class="faci-container"  alt="">
-                                <h3 class="image-name">Academics Department</h3>
-                            </div>
-                        </div>
-                    </div>
+                <i class="fas fa-times"></i>
+                <img src="IMG/FACILITIES/NEXUS - MAKATI.JPG"  class="faci-container" alt="">
+                <img src="IMG/FACILITIES/PARTNERS HIVE - MAKATI.JPG" class="faci-container"  alt="">
                 </div>
             
-                <div class="preview" data-target="p-8">
-                    <i class="fas fa-times"></i>
-                    <div class="image-container">
-                        <div class="image-grid">
-                            <div class="image-item">
-                                <img src="IMG/FACILITIES/NEXUS - MAKATI.JPG"  class="faci-container" alt="">
-                                <h3 class="image-name">College Library</h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="preview" data-target="p-9">
-                    <i class="fas fa-times"></i>
-                    <div class="image-container">
-                        <div class="image-grid">
-                            <div class="image-item">
-                                <img src="IMG/FACILITIES/NEXUS - MAKATI.JPG"  class="faci-container" alt="">
-                                <h3 class="image-name">Lightbox Room</h3>
-                            </div>
-                            <div class="image-item">
-                                <img src="IMG/FACILITIES/PARTNERS HIVE - MAKATI.JPG" class="faci-container"  alt="">
-                                <h3 class="image-name">Mac Laboratory</h3>
-                            </div>
-                            <div class="image-item">
-                                <img src="IMG/FACILITIES/PARTNERS HIVE - MAKATI.JPG" class="faci-container"  alt="">
-                                <h3 class="image-name">Cintiq Laboratory</h3>
-                            </div>
-                            <div class="image-item">
-                                <img src="IMG/FACILITIES/NEXUS - MAKATI.JPG"  class="faci-container" alt="">
-                                <h3 class="image-name">Unity Game Laboratory</h3>
-                            </div>
-                            <div class="image-item">
-                                <img src="IMG/FACILITIES/NEXUS - MAKATI.JPG"  class="faci-container" alt="">
-                                <h3 class="image-name">MPSD Laboratory</h3>
-                            </div>
-                            <div class="image-item">
-                                <img src="IMG/FACILITIES/PARTNERS HIVE - MAKATI.JPG" class="faci-container"  alt="">
-                                <h3 class="image-name">Wet and Dry Drawing Room</h3>
-                            </div>
-                            <div class="image-item">
-                                <img src="IMG/FACILITIES/NEXUS - MAKATI.JPG"  class="faci-container" alt="">
-                                <h3 class="image-name">Chemistry and Physics Laboratory</h3>
-                            </div>
-                            <div class="image-item">
-                                <img src="IMG/FACILITIES/NEXUS - MAKATI.JPG"  class="faci-container" alt="">
-                                <h3 class="image-name">Multimedia Arts Laboratory</h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="preview" data-target="p-10">
-                    <i class="fas fa-times"></i>
-                    <div class="image-container">
-                        <div class="image-grid">
-                            <div class="image-item">
-                                <img src="IMG/FACILITIES/NEXUS - MAKATI.JPG"  class="faci-container" alt="">
-                                <h3 class="image-name">Auditorium</h3>
-                            </div>
-                            <div class="image-item">
-                                <img src="IMG/FACILITIES/PARTNERS HIVE - MAKATI.JPG" class="faci-container"  alt="">
-                                <h3 class="image-name">Multipurpose Hall</h3>
-                            </div>
-                            <div class="image-item">
-                                <img src="IMG/FACILITIES/PARTNERS HIVE - MAKATI.JPG" class="faci-container"  alt="">
-                                <h3 class="image-name">Nexus Gallery</h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="preview" data-target="p-11">
-                    <i class="fas fa-times"></i>
-                    <div class="image-container">
-                        <div class="image-grid">
-                            <div class="image-item">
-                                <img src="IMG/FACILITIES/NEXUS - MAKATI.JPG"  class="faci-container" alt="">
-                                <h3 class="image-name">Gymnasium</h3>
-                            </div>
-                            <div class="image-item">
-                                <img src="IMG/FACILITIES/PARTNERS HIVE - MAKATI.JPG" class="faci-container"  alt="">
-                                <h3 class="image-name">PE Room</h3>
-                            </div>
-                            <div class="image-item">
-                                <img src="IMG/FACILITIES/PARTNERS HIVE - MAKATI.JPG" class="faci-container"  alt="">
-                                <h3 class="image-name">Garden Deck (East Wing / West Wing)</h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="preview" data-target="p-12">
-                    <i class="fas fa-times"></i>
-                    <div class="image-container">
-                        <div class="image-grid">
-                            <div class="image-item">
-                                <img src="IMG/FACILITIES/NEXUS - MAKATI.JPG"  class="faci-container" alt="">
-                                <h3 class="image-name">Running Track</h3>
-                            </div>
-                            <div class="image-item">
-                                <img src="IMG/FACILITIES/PARTNERS HIVE - MAKATI.JPG" class="faci-container"  alt="">
-                                <h3 class="image-name">Library</h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
             </div>
             <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
             <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
         </section>
         <!------------------------------ ORGS ------------------------------>
         
-        <section class="section" id="org">
+        <section class="section scroll-section" id="org">
             <section class="section" id="events-header">
             <h2 class="animate h2-events">STUDENT ORGANIZATIONS</h2>
         </section>
@@ -808,7 +637,7 @@
         <section class="section" id="events-header">
             <h2 class="animate h2-events">EVENTS</h2>
         </section>
-        <section class="section" id="events">
+        <section class="section scroll-section" id="events">
             <div class="events-container animate">
 
                 <div class="events-slider">
@@ -884,7 +713,8 @@
 
 
         <!------------------------------ OTHERS (FIRST DAY MUST HAVES) ------------------------------>
-        <section class="section" id="others-must-haves">
+        <div class="container-others  scroll-section" id="others">
+<section class="section" id="others-must-haves">
             <div class="top">
                 <div class="perspective">
                     <div class="card">
@@ -896,9 +726,72 @@
             </div>
         </section>
 
-        <section class="section" id="others-specs">
-                        <h1>SPECS</h1>
+        
+        <section id="specs-header">
+            <h2 class="animate h2-specs">SPECS</h2>
+            <p id="p-specs">Although we don’t require students to buy their own gadgets, if you’re planning to get your own device? Here are some of our recommended specs: <br><br><br><br><br><br></p>
         </section>
+    
+
+        <section class="section" id="others-specs">
+            <ul class="accordion">
+                <li>
+                    <input type="radio" name="accordion" id="first" checked>
+                    <label for="first">Laptop/PC Specs:</label>
+                    <div class="content">
+                        <p><b>Processor:</b> Intel Core i5 or AMD Ryzen 5 (or higher)</p>
+                        <p><b>RAM:</b> 8GB (or higher)</p>
+                        <p><b>Storage:</b> 256GB SSD (Solid State Drive) or higher</p>
+                        <p><b>Graphics Card:</b> Integrated graphics are sufficient for most tasks, but discrete graphics may be necessary for design or computing students</p>
+                        <p><b>Operating System:</b> Windows 10 or macOS (depending on software requirements)</p>
+                        <p><b>Display:</b> Full HD (1920 x 1080) resolution or higher</p>
+                    </div>
+                </li>
+                <li>
+                    <input type="radio" name="accordion" id="second">
+                    <label for="second">Software to Install:</label>
+                    <div class="content">
+                        <p><b>Microsoft Office Suite</b> (Word, Excel, PowerPoint)</p>
+                        <p><b>Adobe Creative Suite</b> (for design students)</p>
+                        <p><b>Programming IDEs </b>(Integrated Development Environments) such as Visual Studio Code (for computing students)</p>
+                    </div>
+                </li>
+                <li>
+                    <input type="radio" name="accordion" id="third">
+                    <label for="third">Webcam Specs (if needed for online classes/meetings):</label>
+                    <div class="content">
+                        <p><b>Resolution:</b> 720p HD or higher</p>
+                        <p>Autofocus capability</p>
+                        <p>Built-in microphone (for better audio quality)</p>
+                        <p>Compatibility with common video conferencing platforms like Zoom or Microsoft Teams</p>                          
+                    </div>
+                </li>
+                <li>
+                    <input type="radio" name="accordion" id="fourth">
+                    <label for="fourth">Other Equipment:</label>
+                    <div class="content">
+                        <p>Headset or headphones with a microphone for better audio quality during online classes or meetings</p>
+                        <p>External hard drive for backup and additional storage</p>
+                        <p>Graphics tablet (for design students)</p>
+                        <p>External webcam (if the built-in camera doesn't meet requirements)</p>                      
+                    </div>
+                </li>
+                <li>
+                    <input type="radio" name="accordion" id="fifth">
+                    <label for="fifth">Camera Specs (for multimedia students)</label>
+                    <div class="content">
+                        <p><b>Resolution:</b> At least 20 megapixels for still photography; for video, capability to record in Full HD (1080p) is a minimum, but 4K resolution is preferred.</p>  
+                        <p><b>Lens:</b> Interchangeable lenses to provide versatility in shooting different subjects and scenarios.</p>  
+                        <p><b>Sensor Size:</b> APS-C or Full-Frame sensors are recommended for better image quality and performance in low light.</p>  
+                        <p><b>Manual Controls:</b> Full manual controls for exposure (shutter speed, aperture, ISO) to allow for creative flexibility.</p>  
+                        <p><b>Video Features: </b>Look for features such as 4K video recording, high frame rate options (e.g., 60fps, 120fps), and microphone input.</p>  
+                        <p><b>Stabilization: </b>In-body or in-lens image stabilization to reduce camera shake during handheld shooting.</p>         
+                    </div>
+                </li>
+            </ul>
+        </section>
+        </div>
+        
 
     </main>
     

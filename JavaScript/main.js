@@ -66,7 +66,7 @@ $(".top").on("mousemove", function (t) {
 
     // Nav bar scroll behavior
     const navLinkEls = document.querySelectorAll('.nav-link');
-    const sectionEls = document.querySelectorAll('.section');
+    const sectionEls = document.querySelectorAll('.scroll-section');
 
     let currentSection = 'home';
     window.addEventListener('scroll', () => {
