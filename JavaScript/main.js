@@ -107,21 +107,25 @@ $(".top").on("mousemove", function (t) {
 
 
 let sections = document.querySelectorAll('section');
-
 window.onscroll = () => {
     sections.forEach(sec => {
         let top = window.scrollY;
-        let offset = sec.offsetTop - 750;
         let height = sec.offsetHeight;
+        let windowHeight = window.innerHeight;
 
-        if (top >= offset && top < offset + height) {
+        // Adjust offset based on section height
+        let topOffset = sec.offsetTop - (height < windowHeight * 0.5 ? 690 : 750);
+        let bottomOffset = sec.offsetTop + height - (height < windowHeight * 0.5 ? 50 : 750);
+
+        if (top >= topOffset && top < bottomOffset) {
             sec.classList.add('show-animate');
-        }
-        else {
+        } else {
             sec.classList.remove('show-animate');
         }
-    })
-}
+    });
+};
+
+
 
 // Navigation Sidebar Function
 

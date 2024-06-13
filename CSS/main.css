@@ -257,6 +257,30 @@ nav li:first-child {
     color: var(--text-color);
     transition: color 0.3s;
 }
+/* --------------- EVENTS-HEADER --------------- */
+.section:nth-child(7) {
+    height: 5vh; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--text-color);
+    transition: color 0.3s;
+    padding-top: 5%;
+}
+
+.h2-events {
+    font-size: 65px;
+}
+
+.section:nth-child(7) .animate{
+    transform: translateX(75%);
+}
+
+.section:nth-child(7).show-animate .animate{
+    transform: translateX(0);
+}
 
 .slider-container {
     width: 100%;
@@ -329,13 +353,12 @@ nav li:first-child {
 }
 
 /* --------------- EVENTS --------------- */
-.section:nth-child(7) {
+.section:nth-child(8) {
     height: 100vh; 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
     color: var(--text-color);
     transition: color 0.3s;
 }
@@ -549,9 +572,17 @@ nav li:first-child {
 }
 
 
+
+.section:nth-child(8) .animate{
+    transform: translateX(75%);
+}
+
+.section:nth-child(8).show-animate .animate{
+    transform: translateX(0);
+}
+
 /* --------------- OTHERS --------------- */
-/* --------------- OTHERS --------------- */
-.section:nth-child(8) {
+.section:nth-child(9) {
     color: var(--card-text-color);
     display: flex;
     align-items: center;
@@ -654,6 +685,7 @@ img{
     --bg-grad-1: #d7e8f7;
     --bg-grad-2: #3c487a;
     --text-color: #333;
+    --card-text-color: #fff;
     --header-background: rgb(255, 255, 255, 0.8);
     --header-text: #515d89;
     --section-background: #fff;
@@ -677,6 +709,7 @@ img{
     --bg-grad-1: #0b1020;
     --bg-grad-2: #26346b;
     --text-color: #f0f0f0;
+    --card-text-color: #fff;
     --header-background: rgb(0,0,0,0.9);
     --header-text: #f0f0f0;
     --section-background: #444;
