@@ -66,7 +66,7 @@ $(".top").on("mousemove", function (t) {
 
     // Nav bar scroll behavior
     const navLinkEls = document.querySelectorAll('.nav-link');
-    const sectionEls = document.querySelectorAll('.scroll-section');
+    const sectionEls = document.querySelectorAll('.section');
 
     let currentSection = 'home';
     window.addEventListener('scroll', () => {
@@ -138,11 +138,19 @@ function hideSidebar() {
     sidebar.style.display = 'none'
 }
 
-// Organization Slider Function
+// Organization CSS Function
 
-// jQuery(document).ready(function($){
-//     $('.slider-img') on('click', function() {
-//         $('.slider-img').removeClass('active');
-//         $(this).addClass('active');
-//     })
-// })
+const slider = document.querySelectorAll('.slider-img');
+
+slider.forEach((slider) => {
+    slider.addEventListener("click", () => {
+        removeActiveClasses();
+        slider.classList.add("active");
+    });
+});
+
+function removeActiveClasses() {
+    slider.forEach((slider) => {
+        slider.classList.remove("active");
+    })
+}
