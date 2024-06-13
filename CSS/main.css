@@ -1038,3 +1038,115 @@ img{
     }
  
  }
+.floor-item, .detail-item {
+    background-color: #ffffff; /* White background for blocks */
+    border: 1px solid #ccc; /* Light gray border */
+    padding: 30px; /* Padding inside blocks */
+    text-align: center; /* Text alignment */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+}
+
+.floor-item:hover, .detail-item:hover {
+    transform: translateY(-3px); /* Slight lift effect on hover */
+    box-shadow: 0 6px 10px rgba(0,0,0,0.15); /* Enhanced shadow on hover */
+}
+
+.floor-details {
+    display: none; /* Keeps it hidden initially */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adaptive grid layout */
+    gap: 20px;
+    padding: 20px;
+    margin: 0 auto; /* Centers the grid */
+    width: 100%;
+    max-width: 800px; /* Adjust this to fit your design better if needed */
+    justify-content: center; /* Centers items horizontally */
+}
+
+.detail-item {
+    cursor: default; /* Regular cursor for detail items */
+}
+
+/* Styles for the read more button */
+.read-more-btn {
+    position: relative;
+    display: inline-block;
+    padding: 15px 30px;
+    border: 2px solid royalblue;
+    text-transform: uppercase;
+    color: black;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 20px;
+  }
+  
+.read-more-btn::before {
+    content: '';
+    position: absolute;
+    top: 6px;
+    left: -2px;
+    width: calc(100% + 4px);
+    height: calc(100% - 12px);
+    background-color: var(--hex-bg-color);
+    transition: 0.3s ease-in-out;
+    transform: scaleY(1);
+  }
+  
+.read-more-btn:hover::before {
+    transform: scaleY(0);
+  }
+  
+.read-more-btn::after {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: -2px;
+    height: calc(100% + 4px);
+    width: calc(100% - 12px);
+    background-color: var(--hex-bg-color);
+    transition: 0.3s ease-in-out;
+    transform: scaleX(1);
+    transition-delay: 0s;
+  }
+  
+.read-more-btn:hover::after {
+    transform: scaleX(0);
+  }
+  
+.read-more-btn span {
+    position: relative;
+    z-index: 3;
+  }
+  
+  button {
+    background-color: none;
+    text-decoration: none;
+    background-color: var(--hex-bg-color);
+    border: none;
+  }
+
+/* Rectangular div */
+.rectangular {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 80%;
+    background-color: var(--hex-bg-color);
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.1s ease-in-out, visibility 0.1s ease-in-out;
+}
+
+.rectangular.show {
+    visibility: visible;
+    opacity: 1;
+}

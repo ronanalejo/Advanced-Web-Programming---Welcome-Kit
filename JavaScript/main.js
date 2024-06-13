@@ -146,3 +146,64 @@ function hideSidebar() {
 //         $(this).addClass('active');
 //     })
 // })
+document.addEventListener('DOMContentLoaded', function() {
+    // Campus Section
+    const readMoreBtnCampus = document.getElementById('makati-campus-read-more-p');
+    const fullDescDivCampus = document.getElementById('makati-campus-full-desc-div');
+    const closeBtnCampus = document.querySelector('#makati-campus-full-desc-div .close-btn');
+    const hexagonCampus = document.getElementById('hexagon');
+    const makatiCampusDiv = document.getElementById('makati-campus-div');
+
+    if (!readMoreBtnCampus || !fullDescDivCampus || !closeBtnCampus || !hexagonCampus || !makatiCampusDiv) {
+        console.error('One or more elements not found for campus section:', {
+            readMoreBtnCampus,
+            fullDescDivCampus,
+            closeBtnCampus,
+            hexagonCampus,
+            makatiCampusDiv
+        });
+    } else {
+        readMoreBtnCampus.addEventListener('click', function() {
+            console.log('Read more button clicked for campus'); // Debugging log
+            makatiCampusDiv.classList.add('hidden');
+            hexagonCampus.classList.add('split');
+            setTimeout(() => {
+                fullDescDivCampus.classList.add('show');
+            }, 50); // Delay to ensure the split animation finishes before showing the full description
+        });
+
+        closeBtnCampus.addEventListener('click', function() {
+            console.log('Close button clicked for campus'); // Debugging log
+            fullDescDivCampus.classList.remove('show');
+            setTimeout(() => {
+                hexagonCampus.classList.remove('split');
+                hexagonCampus.classList.add('reassemble');
+                setTimeout(() => {
+                    hexagonCampus.classList.remove('reassemble');
+                    makatiCampusDiv.classList.remove('hidden');
+                }, 300); // Time it takes for the reassemble animation
+            }, 50); // Delay to ensure the full description hides before reassembling the hexagon
+        });
+    }
+
+    // About Section
+    const readMoreBtnAbout = document.querySelector('#about .read-more-btn');
+    const hexagonAbout = document.querySelector('#about .hexagon');
+
+    if (!readMoreBtnAbout || !hexagonAbout) {
+        console.error('One or more elements not found for about section:', {
+            readMoreBtnAbout,
+            hexagonAbout
+        });
+    } else {
+        readMoreBtnAbout.addEventListener('click', function() {
+            console.log('Read more button clicked for about'); // Debugging log
+            hexagonAbout.classList.add('split');
+            setTimeout(() => {
+                // Show additional content if necessary
+            }, 50); // Delay to ensure the split animation finishes before showing additional content
+        });
+
+        // Add a close button functionality if necessary for the about section
+    }
+});
