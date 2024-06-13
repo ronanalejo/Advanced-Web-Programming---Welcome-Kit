@@ -848,60 +848,199 @@ img{
     transform: scale(1);
 }
 
+/* FACILITIES */
 
-/* --------------- FACILITIES GALLERY --------------- */
+*{
+    margin:0; padding:0;
+    box-sizing: border-box;
+    outline: none; border:none;
+    text-decoration: none;
+    transition: all .2s linear;
+    text-transform: capitalize;
+ }
 
-/* Base Styles from main.css */
-.facilities-container {
+ html{
+    overflow-x: hidden;
+ } 
+ .facilities-container {
+    max-width: 3000px;
+    margin: 0 auto;
+}
+
+.facilities-container .faci-container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Creates four columns */
-    gap: 20px; /* Sets the space between blocks */
-    padding: 20px;
-    max-width: 1200px; /* Restricts max width for larger screens */
-    margin: auto; /* Centers the container */
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+    gap: 2rem;
+    border-radius: 6px;
 }
 
-.floor-item, .detail-item {
-    background-color: #ffffff; /* White background for blocks */
-    border: 1px solid #ccc; /* Light gray border */
-    padding: 30px; /* Padding inside blocks */
-    text-align: center; /* Text alignment */
-    cursor: pointer; /* Pointer cursor on hover */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Subtle shadow for depth */
-}
-
-.floor-item:hover, .detail-item:hover {
-    transform: translateY(-3px); /* Slight lift effect on hover */
-    box-shadow: 0 6px 10px rgba(0,0,0,0.15); /* Enhanced shadow on hover */
-}
-
-.floor-details {
-    display: none; /* Keeps it hidden initially */
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adaptive grid layout */
-    gap: 20px;
-    padding: 20px;
-    margin: 0 auto; /* Centers the grid */
-    width: 100%;
-    max-width: 800px; /* Adjust this to fit your design better if needed */
-    justify-content: center; /* Centers items horizontally */
-}
-
-.detail-item {
-    cursor: default; /* Regular cursor for detail items */
-}
-
-button {
-    padding: 10px 20px;
-    margin-top: 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
+.facilities-container .faci-container .facilities {
+    border-radius: 6px;
+    position: relative;
+    text-align: center;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
     cursor: pointer;
-    transition: background-color 0.3s;
+    overflow: hidden; /* Ensure the overlay doesn't extend outside the image */
 }
 
-button:hover {
-    background-color: #0056b3;
+.facilities-container .faci-container .facilities img {
+    border-radius: 6px;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s; /* Smooth transform on hover */
 }
+
+.facilities-container .faci-container .facilities::before {
+    border-radius: 6px;
+    transform: scale(0.95);
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0); /* No color initially */
+    transition: background-color 0.3s; /* Smooth transition for background color */
+    z-index: 2; /* Ensure it's above the image but below the text */
+}
+
+.facilities-container .faci-container .facilities:hover::before {
+    border-radius: 6px;
+    transform: scale(0.95);
+    background-color: rgba(0, 0, 0, 0.5); /* 50% black overlay on hover */
+}
+
+.facilities-container .faci-container .facilities:hover img {
+    border-radius: 6px;
+    transform: scale(0.95); /* Slight scale down on hover */
+}
+
+.facilities-container .faci-container .facilities h3 {
+    position: absolute;
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Ensure it's centered properly */
+    width: 100%;
+    font-size: 2.5rem;
+    color: white;
+    text-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.5);
+    z-index: 3; /* Ensure text is above the overlay */
+}
+
+  .faci-preview{
+    position: fixed;
+    top:0; left:0;
+    min-height: 100vh;
+    height: 200px;
+    width: 100%;
+    background: rgba(0,0,0,.8);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+ }
+  
+ .faci-preview .preview{
+    display: none;
+    padding:2rem;
+    text-align: center;
+    background: #fff;
+    position: relative;
+    margin:2rem;
+    width: 40rem;
+    height: 800px;
+    overflow-y: hidden;
+ }
+ 
+ .faci-preview .preview.active{
+    display: inline-block;
+    overflow-y: hidden;
+ }
+  
+ .faci-preview .preview .fa-times{
+    position: absolute;
+    top:1rem; right:1.5rem;
+    cursor: pointer;
+    color:#444;
+    font-size: 4rem;
+ }
+ 
+ .faci-preview .preview .fa-times:hover{
+    transform: rotate(90deg);
+ }
+ 
+ .faci-preview .preview h3{
+    color:#444;
+    padding:.5rem 0;
+    font-size: 2.5rem;
+ }
+ 
+ .faci-preview .preview p{
+    line-height: 1.5;
+    padding:1rem 0;
+    font-size: 1.6rem;
+    color:#777;
+ }
+ 
+ .faci-preview .preview .price{
+    padding:1rem 0;
+    font-size: 2.5rem;
+    color:#27ae60;
+ }
+ 
+ .faci-preview .preview .buttons{
+    display: flex;
+    gap:1.5rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+ }
+ 
+ .faci-preview .preview .buttons a{
+    flex:1 1 16rem;
+    padding:1rem;
+    font-size: 1.8rem;
+    color:#444;
+    border:.1rem solid #444;
+ }
+ 
+ .faci-preview .preview .buttons a.cart{
+    background: #444;
+    color:#fff;
+ }
+ 
+ .faci-preview .preview .buttons a.cart:hover{
+    background: #111;
+ }
+ 
+ .faci-preview .preview .buttons a.buy:hover{
+    background: #444;
+    color:#fff;
+ }
+ 
+ 
+
+@media (max-width:991px){
+
+    html{
+       font-size: 55%;
+    }
+ 
+ }
+ 
+ @media (max-width:768px){
+ 
+    .faci-preview .preview img{
+       height: 25rem;
+    }
+ 
+ }
+ 
+ @media (max-width:450px){
+ 
+    html{
+       font-size: 50%;
+    }
+ 
+ }

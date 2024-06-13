@@ -12,6 +12,7 @@
     <script defer src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Radio+Canada+Big:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
 </head>
 
@@ -298,11 +299,10 @@
         </section>
 
         <!------------------------------ FACILITIES ------------------------------>
-        <section class="section" id="facilities">
+        <!-----<section class="section" id="facilities">
             <h2 class="heading">Our Facilities</h2>
             <div class="facilities-container">
             
-                <!-- Ground Floor -->
                 <div class="floor-item" onclick="toggleVisibility('ground-floor-details')">GROUND FLOOR</div>
                 <div id="ground-floor-details" class="floor-details hidden">
                     <div class="detail-item">Building Lobby & Turnstile System</div>
@@ -317,7 +317,6 @@
                     <button onclick="showFloors()">Back to Floors</button>
                 </div>
             
-                <!-- Mezzanine -->
                 <div class="floor-item" onclick="toggleVisibility('mezzanine-details')">MEZZANINE</div>
                 <div id="mezzanine-details" class="floor-details hidden">
                     <div class="detail-item">Meeting Rooms</div>
@@ -331,7 +330,6 @@
                     <button onclick="showFloors()">Back to Floors</button>
                 </div>
             
-                <!-- Second to Fourth Floor -->
                 <div class="floor-item" onclick="toggleVisibility('second-to-fourth-details')">SECOND-FOURTH FLOOR</div>
                 <div id="second-to-fourth-details" class="floor-details hidden">
                     <div class="detail-item">Parking Area</div>
@@ -341,7 +339,6 @@
                     <button onclick="showFloors()">Back to Floors</button>
                 </div>
             
-                <!-- Fifth Floor -->
                 <div class="floor-item" onclick="toggleVisibility('fifth-floor-details')">FIFTH FLOOR</div>
                 <div id="fifth-floor-details" class="floor-details hidden">
                     <div class="detail-item">Cafeteria</div>
@@ -350,14 +347,12 @@
                     <button onclick="showFloors()">Back to Floors</button>
                 </div>
         
-                 <!-- Sixth Floor -->
                 <div class="floor-item" onclick="toggleVisibility('sixth-floor-details')">SIXTH FLOOR</div>
                 <div id="sixth-floor-details" class="floor-details hidden">
                     <div class="detail-item">SHS Library</div>
                     <button onclick="showFloors()">Back to Floors</button>
                 </div>
             
-                <!-- Seventh Floor -->
                 <div class="floor-item" onclick="toggleVisibility('seventh-floor-details')">SEVENTH FLOOR</div>
                 <div id="seventh-floor-details" class="floor-details hidden">
                     <div class="detail-item">Sewing Room</div>
@@ -368,7 +363,6 @@
                     <button onclick="showFloors()">Back to Floors</button>
                 </div>
         
-                <!-- Eighth Floor -->
                 <div class="floor-item" onclick="toggleVisibility('eighth-floor-details')">EIGHTH FLOOR</div>
                 <div id="eighth-floor-details" class="floor-details hidden">
                     <div class="detail-item">Faculty Room</div>
@@ -377,14 +371,12 @@
                     <button onclick="showFloors()">Back to Floors</button>
                 </div>
             
-                <!-- Ninth Floor -->
                 <div class="floor-item" onclick="toggleVisibility('ninth-floor-details')">NINTH FLOOR</div>
                 <div id="ninth-floor-details" class="floor-details hidden">
                     <div class="detail-item">College Library</div>
                     <button onclick="showFloors()">Back to Floors</button>
                 </div>
             
-                <!-- Tenth Floor -->
                 <div class="floor-item" onclick="toggleVisibility('tenth-floor-details')">TENTH FLOOR</div>
                 <div id="tenth-floor-details" class="floor-details hidden">
                     <div class="detail-item">Lightbox Room</div>
@@ -398,7 +390,6 @@
                     <button onclick="showFloors()">Back to Floors</button>
                 </div>
             
-                <!-- Twelfth Floor -->
                 <div class="floor-item" onclick="toggleVisibility('twelfth-floor-details')">TWELVETH FLOOR</div>
                 <div id="twelfth-floor-details" class="floor-details hidden">
                     <div class="detail-item">Auditorium</div>
@@ -407,7 +398,6 @@
                     <button onclick="showFloors()">Back to Floors</button>
                 </div>
             
-                <!-- Lower Penthouse -->
                 <div class="floor-item" onclick="toggleVisibility('lower-penthouse-details')">LOWER PENTHOUSE</div>
                 <div id="lower-penthouse-details" class="floor-details hidden">
                     <div class="detail-item">Gymnasium</div>
@@ -416,7 +406,6 @@
                     <button onclick="showFloors()">Back to Floors</button>
                 </div>
             
-                <!-- Upper Penthouse -->
                 <div class="floor-item" onclick="toggleVisibility('upper-penthouse-details')">UPPER PENTHOUSE</div>
                 <div id="upper-penthouse-details" class="floor-details hidden">
                     <div class="detail-item">Running Track</div>
@@ -424,14 +413,199 @@
                     <button onclick="showFloors()">Back to Floors</button>
                 </div>
             </div>
-        </section>
-        
-        
+        </section> --->
+        <section class="section" id="facilities">
+            <div class="facilities-container">
 
+                <section class="section" id="events-header">
+                    <h2 class="animate h2-events">OUR FACILITIES</h2>
+                </section>
+            
+                <div class="faci-container" style="margin-top: -370px;">
+            
+                <div class="facilities" data-name="p-1">
+                    <img src="IMG/FACILITIES/LOBBY - MAKATI.jpg" class="img__overlay" alt="">
+                    <h3>Ground Floor</h3>
+                </div>
+            
+                <div class="facilities" data-name="p-2">
+                    <img src="IMG/FACILITIES/GREEN SCREEN - MAKATI.jpg" class="img__overlay" alt="">
+                    <h3>Mezzanine</h3>
+                </div>
+            
+                <div class="facilities" data-name="p-3">
+                    <img src="IMG/FACILITIES/MEDITATION ROOM - MAKATI.JPG" alt="">
+                    <h3>2nd to 4th Floor</h3>
+                </div>
+            
+                <div class="facilities" data-name="p-4">
+                    <img src="IMG/FACILITIES/CAFETERIA 2 - MAKATI.jpg" alt="">
+                    <h3>5th Floor</h3>
+                </div>
+            
+                <div class="facilities" data-name="p-5">
+                    <img src="IMG/FACILITIES/MUSIC ROOM 2 - MAKATI.jpg" alt="">
+                    <h3>6th Floor</h3>
+                </div>
+            
+                <div class="facilities" data-name="p-6">
+                    <img src="IMG/FACILITIES/MUSIC ROOM - MAKATI.jpg" alt="">
+                    <h3>7th Floor</h3>
+                </div>
+            
+                <div class="facilities" data-name="p-7">
+                    <img src="IMG/FACILITIES/MMA LAB - MAKATI.jpg" alt="">
+                    <h3>8th Floor</h3>
+                </div>
+            
+                <div class="facilities" data-name="p-8">
+                    <img src="IMG/FACILITIES/DANCE ROOM - MAKATI.jpg" alt="">
+                    <h3>9th Floor</h3>
+                </div>
+            
+                <div class="facilities" data-name="p-9">
+                    <img src="IMG/FACILITIES/COMP LAB - MAKATI.jpg" alt="">
+                    <h3>10th Floor</h3>
+                </div>
+            
+                <div class="facilities" data-name="p-10">
+                    <img src="IMG/FACILITIES/AUDITORIUM - MAKATI.jpg" alt="">
+                    <h3>12th Floor</h3>
+                </div>
+            
+                <div class="facilities" data-name="p-11">
+                    <img src="IMG/FACILITIES/GYM 2 - MAKATI.jpg" alt="">
+                    <h3>Lower Penthouse</h3>
+                </div>
+            
+                <div class="facilities" data-name="p-12">
+                    <img src="IMG/FACILITIES/LIBRARY - MAKATI.jpg" alt="">
+                    <h3>Upper Penthouse</h3>
+                </div>
+            
+                </div>
+            
+            </div>
+
+            
+            <div class="faci-preview">
+
+                <div class="preview" data-target="p-1">
+                <i class="fas fa-times"></i>
+                <img src="IMG/FACILITIES/NEXUS - MAKATI.JPG"  class="faci-container" alt="">
+                <img src="IMG/FACILITIES/PARTNERS HIVE - MAKATI.JPG" class="faci-container"  alt="">
+                </div>
+            
+                <div class="preview" data-target="p-2">
+                <i class="fas fa-times"></i>
+                <img src="images/2.png" alt="">
+                <h3>organic onions</h3>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <span>( 250 )</span>
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, dolorem.</p>
+                <div class="price">$2.00</div>
+                <div class="buttons">
+                    <a href="#" class="buy">buy now</a>
+                    <a href="#" class="cart">add to cart</a>
+                </div>
+                </div>
+            
+                <div class="preview" data-target="p-3">
+                <i class="fas fa-times"></i>
+                <img src="images/3.png" alt="">
+                <h3>organic tomatoes</h3>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <span>( 250 )</span>
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, dolorem.</p>
+                <div class="price">$2.00</div>
+                <div class="buttons">
+                    <a href="#" class="buy">buy now</a>
+                    <a href="#" class="cart">add to cart</a>
+                </div>
+                </div>
+            
+                <div class="preview" data-target="p-4">
+                <i class="fas fa-times"></i>
+                <img src="images/4.png" alt="">
+                <h3>organic brinjal</h3>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <span>( 250 )</span>
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, dolorem.</p>
+                <div class="price">$2.00</div>
+                <div class="buttons">
+                    <a href="#" class="buy">buy now</a>
+                    <a href="#" class="cart">add to cart</a>
+                </div>
+                </div>
+            
+                <div class="preview" data-target="p-5">
+                <i class="fas fa-times"></i>
+                <img src="images/5.png" alt="">
+                <h3>organic broccoli</h3>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <span>( 250 )</span>
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, dolorem.</p>
+                <div class="price">$2.00</div>
+                <div class="buttons">
+                    <a href="#" class="buy">buy now</a>
+                    <a href="#" class="cart">add to cart</a>
+                </div>
+                </div>
+            
+                <div class="preview" data-target="p-6">
+                <i class="fas fa-times"></i>
+                <img src="images/6.png" alt="">
+                <h3>organic potatoes</h3>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <span>( 250 )</span>
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, dolorem.</p>
+                <div class="price">$2.00</div>
+                <div class="buttons">
+                    <a href="#" class="buy">buy now</a>
+                    <a href="#" class="cart">add to cart</a>
+                </div>
+                </div>
+            
+            </div>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        </section>
         <!------------------------------ ORGS ------------------------------>
         
         <section class="section" id="org">
-            <h2 class="heading">Organizations</h2>
+            <section class="section" id="events-header">
+            <h2 class="animate h2-events">STUDENT ORGANIZATIONS</h2>
+        </section>
 
             <section class="slider-container">
                 <div class="slider-images">
@@ -556,6 +730,8 @@
             </section>
 
         </section>
+
+
         <!------------------------------ EVENTS ------------------------------>
         <section class="section" id="events-header">
             <h2 class="animate h2-events">EVENTS</h2>
@@ -631,6 +807,9 @@
                 </div>
             </div>
         </section>
+        
+        <br><br><br><br><br>
+
         <section class="section" id="others">
             <div class="top">
                 <div class="perspective">
@@ -643,6 +822,8 @@
             </div>
         </section>
     </main>
+    
+    <br><br><br><br><br>
 
     <footer>
         <section class="footer">

@@ -1,21 +1,24 @@
-function toggleVisibility(id) {
-    var allDetails = document.querySelectorAll('.floor-details');
-    var allFloors = document.querySelectorAll('.floor-item');
-    var targetDetails = document.getElementById(id);
+let preveiwContainer = document.querySelector('.faci-preview');
+let previewBox = preveiwContainer.querySelectorAll('.preview');
 
-    // Hide all details and show only the clicked one
-    allDetails.forEach(detail => detail.style.display = 'none'); // Hide all details first
-    allFloors.forEach(floor => floor.style.display = 'none'); // Hide all floor items
+document.querySelectorAll('.faci-container .facilities').forEach(product => {
+  product.onclick = () => {
+    preveiwContainer.style.display = 'flex';
+    document.body.style.overflow = 'hidden'; // Disable scrolling when the modal is open
+    let name = product.getAttribute('data-name');
+    previewBox.forEach(preview => {
+      let target = preview.getAttribute('data-target');
+      if(name == target){
+        preview.classList.add('active');
+      }
+    });
+  };
+});
 
-    // Show only the target details
-    targetDetails.style.display = 'grid'; // Display the clicked floor's details
-}
-
-function showFloors() {
-    const allDetails = document.querySelectorAll('.floor-details');
-    const allFloors = document.querySelectorAll('.floor-item');
-
-    // Hide all details and show all floors
-    allDetails.forEach(detail => detail.style.display = 'none');
-    allFloors.forEach(floor => floor.style.display = 'block');
-}
+previewBox.forEach(close => {
+  close.querySelector('.fa-times').onclick = () => {
+    close.classList.remove('active');
+    preveiwContainer.style.display = 'none';
+    document.body.style.overflow = 'auto'; // Re-enable scrolling when the modal closes
+  };
+});
