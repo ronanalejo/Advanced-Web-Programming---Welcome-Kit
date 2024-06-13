@@ -9,8 +9,10 @@
     <link rel="stylesheet" href="./CSS/hexagon.css">
     <script defer src="./JavaScript/main.js"></script>
     <script defer src="./JavaScript/facilities.js"></script>
+    <script defer src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Radio+Canada+Big:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
 </head>
 
@@ -97,6 +99,7 @@
             </nav>
         </div>
     </header>
+
     
     <main class="main">
         <section class="section" id="home">
@@ -114,11 +117,8 @@
         <section class="section" id="about">
             <div class="hexagon-container">
                 <div class="hexagon">
-                    <div class="hexagon-left"></div>
-                    <div class="hexagon-right"></div>
                     <div class="hexagon-content">
                         <h2 class="heading">About</h2>
-                        <button class="read-more-btn"><span>Read More!</span></button>
                     </div>
                 </div>
             </div>
@@ -127,26 +127,35 @@
         <!------------------------------ CAMPUS ------------------------------>
         <section class="section" id="campus">
             <div class="hexagon-container">
-                <div class="hexagon" id="hexagon">
-                    <div class="hexagon-left"></div>
-                    <div class="hexagon-right"></div>
+                <div class="hexagon">
                     <div class="hexagon-content">
                         <div id="makati-campus-div">
                             <h2 id="makati-campus-h2">Makati Campus</h2>
                             <p id="makati-campus-short-desc-p">Here at iACADEMY Nexus you will experience innovation wherein top-tier education meets cutting-edge facilities in the heart of Makati. The dynamic community is recognized for excellence in animation, software engineering, and more.</p>
-                            <button id="makati-campus-read-more-p" class="read-more-btn"><span>Read More!</span></button>
-                        </div>
-                        <div id="makati-campus-full-desc-div" class="hidden">
-                            <button class="close-btn">X</button>
-                            <p id="makati-campus-full-desc-p">iACADEMY’s first campus was along Ayala Avenue in Makati. It first offered College courses on Software Engineering, Network Engineering, e-Management, and Digital Arts. The school grew its course offerings. In 2007, iACADEMY was the first to offer BS Animation in the Philippines. As the College program offerings grew, the student population grew with it. By 2014, iACADEMY transferred to another building along Buendia Avenue in Makati. The school started offering Senior High School in 2016 and the student population has grown exponentially that by 2017 the school had to build a bigger, newer, even better space for learning. Hence, the iACADEMY Nexus along Yakal St. still in Makati, closer to partner companies where industry practitioners and professors for iACADEMY come from opened in 2018. 
+                            <p id="makati-campus-read-more-p">Read More!</p>
+                                <div id="makati-campus-full-desc-div">
+                                    <p id="makati-campus-full-desc-p">iACADEMY’s first campus was along Ayala Avenue in Makati. It first offered College courses on Software Engineering, Network Engineering, e-Management, and Digital Arts. The school grew its course offerings. In 2007, iACADEMY was the first to offer BS Animation in the Philippines. As the College program offerings grew, the student population grew with it. By 2014, iACADEMY transferred to another building along Buendia Avenue in Makati. The school started offering Senior High School in 2016 and the student population has grown exponentially that by 2017 the school had to build a bigger, newer, even better space for learning. Hence, the iACADEMY Nexus along Yakal St. still in Makati, closer to partner companies where industry practitioners and professors for iACADEMY come from opened in 2018. 
+            
+                                        iACADEMY’s unique approach to education has gained traction and has been awarded IBM Center of Excellence in the ASEAN Region, UNITY training and certification center, PwC Accountancy school partner, Toon Boom Center of Excellence, Most Innovative School, among others. See full list of awards , among others.
 
-                                iACADEMY’s unique approach to education has gained traction and has been awarded IBM Center of Excellence in the ASEAN Region, UNITY training and certification center, PwC Accountancy school partner, Toon Boom Center of Excellence, Most Innovative School, among others. See full list of awards , among others.
-                                </p>
+                                    </p>
+                                </div>
+                        </div>
+                        <div id="cebu-campus-div">
+                            <h2 id="cebu-campus-h2">Cebu Campus</h2>
+                            <p id="cebu-campus-short-desc-p">Here at iACADEMY Cebu you will experience the cutting-edge education wherein programs and high-tech facilities in the vibrant IT Park prepares you for a dynamic career in tech and design.</p>
+                            <p id="cebu-campus-read-more-p">Read More!</p>
+                                <div id="cebu-campus-full-desc-div">
+                                    <p id="cebu-campus-full-desc-p">
+                                        iACADEMY’s success in its Makati Campus has demanded expansion and the only way to grow is to bring the type of education that iACADEMY offers closer to people. In 2023, iACADEMY opened its first regional campus in Cebu IT Park. Its initial offerings are Software Engineering, Game Development, Real Estate Management, Animation, and Multimedia Arts and Design. Maintaining the same academic and facilities quality that its main campus offers, the unique Cebu campus design is filled with high-tech classrooms, multipurpose hall, Cintiq room, light box room, green room, multimedia laboratory, computer laboratories, and a very inviting student lounge.
+                                    </p>
+                                </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>    
+        </section>
+
         <!------------------------------ MEET THE FAMILY ------------------------------>
         <section class="section" id="meet">
             <div id="meetTheFamily">
@@ -290,11 +299,10 @@
         </section>
 
         <!------------------------------ FACILITIES ------------------------------>
-        <section class="section" id="facilities">
+        <!-----<section class="section" id="facilities">
             <h2 class="heading">Our Facilities</h2>
             <div class="facilities-container">
             
-                <!-- Ground Floor -->
                 <div class="floor-item" onclick="toggleVisibility('ground-floor-details')">GROUND FLOOR</div>
                 <div id="ground-floor-details" class="floor-details hidden">
                     <div class="detail-item">Building Lobby & Turnstile System</div>
@@ -309,7 +317,6 @@
                     <button onclick="showFloors()">Back to Floors</button>
                 </div>
             
-                <!-- Mezzanine -->
                 <div class="floor-item" onclick="toggleVisibility('mezzanine-details')">MEZZANINE</div>
                 <div id="mezzanine-details" class="floor-details hidden">
                     <div class="detail-item">Meeting Rooms</div>
@@ -323,7 +330,6 @@
                     <button onclick="showFloors()">Back to Floors</button>
                 </div>
             
-                <!-- Second to Fourth Floor -->
                 <div class="floor-item" onclick="toggleVisibility('second-to-fourth-details')">SECOND-FOURTH FLOOR</div>
                 <div id="second-to-fourth-details" class="floor-details hidden">
                     <div class="detail-item">Parking Area</div>
@@ -333,7 +339,6 @@
                     <button onclick="showFloors()">Back to Floors</button>
                 </div>
             
-                <!-- Fifth Floor -->
                 <div class="floor-item" onclick="toggleVisibility('fifth-floor-details')">FIFTH FLOOR</div>
                 <div id="fifth-floor-details" class="floor-details hidden">
                     <div class="detail-item">Cafeteria</div>
@@ -342,14 +347,12 @@
                     <button onclick="showFloors()">Back to Floors</button>
                 </div>
         
-                 <!-- Sixth Floor -->
                 <div class="floor-item" onclick="toggleVisibility('sixth-floor-details')">SIXTH FLOOR</div>
                 <div id="sixth-floor-details" class="floor-details hidden">
                     <div class="detail-item">SHS Library</div>
                     <button onclick="showFloors()">Back to Floors</button>
                 </div>
             
-                <!-- Seventh Floor -->
                 <div class="floor-item" onclick="toggleVisibility('seventh-floor-details')">SEVENTH FLOOR</div>
                 <div id="seventh-floor-details" class="floor-details hidden">
                     <div class="detail-item">Sewing Room</div>
@@ -360,7 +363,6 @@
                     <button onclick="showFloors()">Back to Floors</button>
                 </div>
         
-                <!-- Eighth Floor -->
                 <div class="floor-item" onclick="toggleVisibility('eighth-floor-details')">EIGHTH FLOOR</div>
                 <div id="eighth-floor-details" class="floor-details hidden">
                     <div class="detail-item">Faculty Room</div>
@@ -369,14 +371,12 @@
                     <button onclick="showFloors()">Back to Floors</button>
                 </div>
             
-                <!-- Ninth Floor -->
                 <div class="floor-item" onclick="toggleVisibility('ninth-floor-details')">NINTH FLOOR</div>
                 <div id="ninth-floor-details" class="floor-details hidden">
                     <div class="detail-item">College Library</div>
                     <button onclick="showFloors()">Back to Floors</button>
                 </div>
             
-                <!-- Tenth Floor -->
                 <div class="floor-item" onclick="toggleVisibility('tenth-floor-details')">TENTH FLOOR</div>
                 <div id="tenth-floor-details" class="floor-details hidden">
                     <div class="detail-item">Lightbox Room</div>
@@ -390,7 +390,6 @@
                     <button onclick="showFloors()">Back to Floors</button>
                 </div>
             
-                <!-- Twelfth Floor -->
                 <div class="floor-item" onclick="toggleVisibility('twelfth-floor-details')">TWELVETH FLOOR</div>
                 <div id="twelfth-floor-details" class="floor-details hidden">
                     <div class="detail-item">Auditorium</div>
@@ -399,7 +398,6 @@
                     <button onclick="showFloors()">Back to Floors</button>
                 </div>
             
-                <!-- Lower Penthouse -->
                 <div class="floor-item" onclick="toggleVisibility('lower-penthouse-details')">LOWER PENTHOUSE</div>
                 <div id="lower-penthouse-details" class="floor-details hidden">
                     <div class="detail-item">Gymnasium</div>
@@ -408,7 +406,6 @@
                     <button onclick="showFloors()">Back to Floors</button>
                 </div>
             
-                <!-- Upper Penthouse -->
                 <div class="floor-item" onclick="toggleVisibility('upper-penthouse-details')">UPPER PENTHOUSE</div>
                 <div id="upper-penthouse-details" class="floor-details hidden">
                     <div class="detail-item">Running Track</div>
@@ -416,123 +413,231 @@
                     <button onclick="showFloors()">Back to Floors</button>
                 </div>
             </div>
-        </section>
-        
-        
+        </section> --->
+        <section class="section" id="facilities">
+            <div class="facilities-container">
 
+                <section class="section" id="events-header">
+                    <h2 class="animate h2-events">OUR FACILITIES</h2>
+                </section>
+            
+                <div class="faci-container" style="margin-top: -370px;">
+            
+                <div class="facilities" data-name="p-1">
+                    <img src="IMG/FACILITIES/LOBBY - MAKATI.jpg" class="img__overlay" alt="">
+                    <h3>Ground Floor</h3>
+                </div>
+            
+                <div class="facilities" data-name="p-2">
+                    <img src="IMG/FACILITIES/GREEN SCREEN - MAKATI.jpg" class="img__overlay" alt="">
+                    <h3>Mezzanine</h3>
+                </div>
+            
+                <div class="facilities" data-name="p-3">
+                    <img src="IMG/FACILITIES/MEDITATION ROOM - MAKATI.JPG" alt="">
+                    <h3>2nd to 4th Floor</h3>
+                </div>
+            
+                <div class="facilities" data-name="p-4">
+                    <img src="IMG/FACILITIES/CAFETERIA 2 - MAKATI.jpg" alt="">
+                    <h3>5th Floor</h3>
+                </div>
+            
+                <div class="facilities" data-name="p-5">
+                    <img src="IMG/FACILITIES/MUSIC ROOM 2 - MAKATI.jpg" alt="">
+                    <h3>6th Floor</h3>
+                </div>
+            
+                <div class="facilities" data-name="p-6">
+                    <img src="IMG/FACILITIES/MUSIC ROOM - MAKATI.jpg" alt="">
+                    <h3>7th Floor</h3>
+                </div>
+            
+                <div class="facilities" data-name="p-7">
+                    <img src="IMG/FACILITIES/MMA LAB - MAKATI.jpg" alt="">
+                    <h3>8th Floor</h3>
+                </div>
+            
+                <div class="facilities" data-name="p-8">
+                    <img src="IMG/FACILITIES/DANCE ROOM - MAKATI.jpg" alt="">
+                    <h3>9th Floor</h3>
+                </div>
+            
+                <div class="facilities" data-name="p-9">
+                    <img src="IMG/FACILITIES/COMP LAB - MAKATI.jpg" alt="">
+                    <h3>10th Floor</h3>
+                </div>
+            
+                <div class="facilities" data-name="p-10">
+                    <img src="IMG/FACILITIES/AUDITORIUM - MAKATI.jpg" alt="">
+                    <h3>12th Floor</h3>
+                </div>
+            
+                <div class="facilities" data-name="p-11">
+                    <img src="IMG/FACILITIES/GYM 2 - MAKATI.jpg" alt="">
+                    <h3>Lower Penthouse</h3>
+                </div>
+            
+                <div class="facilities" data-name="p-12">
+                    <img src="IMG/FACILITIES/LIBRARY - MAKATI.jpg" alt="">
+                    <h3>Upper Penthouse</h3>
+                </div>
+            
+                </div>
+            
+            </div>
+
+            
+            <div class="faci-preview">
+
+                <div class="preview" data-target="p-1">
+                <i class="fas fa-times"></i>
+                <img src="IMG/FACILITIES/NEXUS - MAKATI.JPG"  class="faci-container" alt="">
+                <img src="IMG/FACILITIES/PARTNERS HIVE - MAKATI.JPG" class="faci-container"  alt="">
+                </div>
+            
+            </div>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        </section>
         <!------------------------------ ORGS ------------------------------>
+        
         <section class="section" id="org">
-            <h2 class="heading">Organizations</h2>
-
-            <div id="cso">
-                <h2 id="cso-text">Central Student Organization (CSO)</h2>
-                    <div id="cso-div">
-                        <!-- idk what to put -->
-                    </div>
-            </div>  
-
-            <div id="compile">
-                <h2 id="compile-text">COMPILE</h2>
-                    <div id="compile-div">
-                        <!-- idk what to put -->
-                    </div>
-            </div> 
-
-            <div id="elix">
-                <h2 id="elix-text">ELIX ESPORTS</h2>
-                    <div id="elix-div">
-                        <!-- idk what to put -->
-                    </div>
-            </div> 
-
-            <div id="fsi">
-                <h2 id="fsi-text">Filmmakers Society of iACADEMY (FSI)</h2>
-                    <div id="fsi-div">
-                        <!-- idk what to put -->
-                    </div>
-            </div> 
-
-            <div id="insight">
-                <h2 id="insight-text">iNSIGHT</h2>
-                    <div id="insight-div">
-                        <!-- idk what to put -->
-                    </div>
-            </div>
-
-            <div id="momentum">
-                <h2 id="momentum-text">Momentum</h2>
-                    <div id="momentum-div">
-                        <!-- idk what to put -->
-                    </div>
-            </div>
-
-            <div id="pikzel">
-                <h2 id="pikzel-text">Pikzel Graphic Design</h2>
-                    <div id="pikzel-div">
-                        <!-- idk what to put -->
-                    </div>
-            </div>
-
-            <div id="octave">
-                <h2 id="octave-text">Octave</h2>
-                    <div id="octave-div">
-                        <!-- idk what to put -->
-                    </div>
-            </div>
-
-            <div id="optics">
-                <h2 id="optics-text">iACADEMY Optics</h2>
-                    <div id="optics-div">
-                        <!-- idk what to put -->
-                    </div>
-            </div>
-
-            <div id="prima">
-                <h2 id="prima-text">PRIMA</h2>
-                    <div id="prima-div">
-                        <!-- idk what to put -->
-                    </div>
-            </div>
-
-            <div id="rhythm">
-                <h2 id="rhythm-text">Rhythm</h2>
-                    <div id="rhythm-div">
-                        <!-- idk what to put -->
-                    </div>
-            </div>
-
-            <div id="iacmedia">
-                <h2 id="iacmedia-text">iAC Media</h2>
-                    <div id="iacmedia-div">
-                        <!-- idk what to put -->
-                    </div>
-            </div>
-
-            <div id="iso">
-                <h2 id="iso-text">iACADEMY Sports Organization (iSO)</h2>
-                    <div id="iso-div">
-                        <!-- idk what to put -->
-                    </div>
-            </div>
-
-            <div id="iact">
-                <h2 id="iact-text">iACT</h2>
-                    <div id="iact-div">
-                        <!-- idk what to put -->
-                    </div>
-            </div>
-
-            <div id="tmt">
-                <h2 id="tmt-text">The Moonlight Tavern (TMT)</h2>
-                    <div id="tmt-div">
-                        <!-- idk what to put -->
-                    </div>
-            </div>
+            <section class="section" id="events-header">
+            <h2 class="animate h2-events">STUDENT ORGANIZATIONS</h2>
         </section>
+
+            <section class="slider-container">
+                <div class="slider-images">
+
+                  <div class="slider-img">
+                    <img class="org-img" src="IMG/ORG EVENT PICTURES/ELIX EVENT.jpg" alt="1">
+                    <h1 class="h1-org">elix</h1>
+                    <div class="details">
+                        <h2>ELIX</h2>
+                        <p>ORG1</p>
+                    </div>
+                  </div>
+
+                  <div class="slider-img">
+                    <img class="org-img" src="IMG/ORG EVENT PICTURES/PRIMA EVENT.jpg" alt="2">
+                    <h1 class="h1-org">prima</h1>
+                    <div class="details">
+                        <h2>PRIMA</h2>
+                        <p>ORG2</p>
+                    </div> 
+                  </div>
+
+                  <div class="slider-img">
+                    <img class="org-img" src="IMG/ORG EVENT PICTURES/INSIGHT EVENT.jpg" alt="3">
+                    <h1 class="h1-org">Insight</h1>
+                    <div class="details">
+                        <h2>INSIGHT</h2>
+                        <p>ORG3</p>
+                    </div>
+                  </div>
+
+                  <div class="slider-img">
+                    <img class="org-img" src="IMG/ORG EVENT PICTURES/PIKZEL EVENT.JPG" alt="4">
+                    <h1 class="h1-org">pikzel</h1>
+                    <div class="details">
+                        <h2>PIKZEL</h2>
+                        <p>ORG4</p>
+                    </div>
+                  </div>
+
+                  <div class="slider-img">
+                    <img class="org-img" src="IMG/ORG EVENT PICTURES/OCTAVE EVENT.jpg" alt="5">
+                    <h1 class="h1-org">Octave</h1>
+                    <div class="details">
+                        <h2>OCTAVE</h2>
+                        <p>ORG5</p>
+                    </div> 
+                  </div>
+
+                  <div class="slider-img">
+                    <img class="org-img" src="IMG/ORG EVENT PICTURES/OPTICS EVENT.jpg" alt="6">
+                    <h1 class="h1-org">Optics</h1>
+                    <div class="details">
+                        <h2>OPTICS</h2>
+                        <p>ORG6</p>
+                    </div> 
+                  </div>
+
+                  <div class="slider-img">
+                    <img class="org-img" src="IMG/ORG EVENT PICTURES/COMPILE EVENT.JPG" alt="7">
+                    <h1 class="h1-org">Compile</h1>
+                    <div class="details">
+                        <h2>COMPILE</h2>
+                        <p>ORG7</p>
+                    </div>
+                  </div>
+
+                  <div class="slider-img">
+                    <img class="org-img" src="IMG/ORG EVENT PICTURES/RHYTHM EVENT.jpg" alt="8">
+                    <h1 class="h1-org">Rhythm</h1>
+                    <div class="details">
+                        <h2>RHYTHM</h2>
+                        <p>ORG8</p>
+                    </div>
+                  </div>
+
+                  <div class="slider-img">
+                    <img class="org-img" src="IMG/ORG EVENT PICTURES/IAC MEDIA.jpg" alt="9">
+                    <h1 class="h1-org">iAC Media</h1>
+                    <div class="details">
+                        <h2>iAC MEDIA</h2>
+                        <p>ORG9</p>
+                    </div> 
+                  </div>
+
+                  <div class="slider-img">
+                    <img class="org-img" src="IMG/ORG EVENT PICTURES/ISO.jpg" alt="10">
+                    <h1 class="h1-org">ISO</h1>
+                    <div class="details">
+                        <h2>ISO</h2>
+                        <p>ORG10</p>
+                    </div> 
+                  </div>
+
+                  <div class="slider-img">
+                    <img class="org-img" src="IMG/ORG EVENT PICTURES/IACT EVENT.jpg" alt="11">
+                    <h1 class="h1-org">iACT</h1>
+                    <div class="details">
+                        <h2>iACT</h2>
+                        <p>ORG11</p>
+                    </div> 
+                  </div>
+
+                  <div class="slider-img">
+                    <img class="org-img" src="IMG/ORG EVENT PICTURES/FSI EVENT.jpg" alt="12">
+                    <h1 class="h1-org">FSI</h1>
+                    <div class="details">
+                        <h2>FSI</h2>
+                        <p>ORG12</p>
+                    </div> 
+                  </div>
+
+                  <div class="slider-img">
+                    <img class="org-img" src="IMG/ORG EVENT PICTURES/MOMENTUM EVENT.jpg" alt="13">
+                    <h1 class="h1-org">Momentum</h1>
+                    <div class="details">
+                        <h2>MOMENTUM</h2>
+                        <p>ORG13</p>
+                    </div> 
+                  </div>
+                </div>
+            </section>
+
+        </section>
+
 
         <!------------------------------ EVENTS ------------------------------>
+        <section class="section" id="events-header">
+            <h2 class="animate h2-events">EVENTS</h2>
+        </section>
         <section class="section" id="events">
-            <div class="events-container">
+            <div class="events-container animate">
 
                 <div class="events-slider">
 
@@ -602,10 +707,23 @@
                 </div>
             </div>
         </section>
+        
+        <br><br><br><br><br>
+
         <section class="section" id="others">
-            <h2 class="heading">Others</h2>
+            <div class="top">
+                <div class="perspective">
+                    <div class="card">
+                        <div id="nbpen" class="thumb" style="background-image: url('./IMG/nbpen-white.png')"></div>
+                        <h2>First day must haves</h2>
+                        <span>Notebook & Pen</span>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
+    
+    <br><br><br><br><br>
 
     <footer>
         <section class="footer">
