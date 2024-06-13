@@ -268,37 +268,38 @@
         </div>
     </div>
     <main>
-        <label class="switch">
-            <input type="checkbox" id="modeSwitch">
-            <span class="slider round"></span>
-        </label>
+
         <section id="welcome">
+            <label class="switch">
+                <input type="checkbox" id="modeSwitch">
+                <span class="slider round"></span>
+            </label>
             <img src="./IMG/nav-logo-blue.png" alt="logo" class="logo-form logo-img" id="logoImg">
-            <h2>iACADEMY Welcome Kit</h2>
-            <div class="user-info">
-                <form id="nameForm">
-                    <label for="nameInput"></label>
-                    <input placeholder="Enter Your Name" type="text" id="nameInput" name="nameInput" required><br>
-                    <br>
-                    <label for="yearLevel">Year Level:</label>
-                    <select id="yearLevel" required>
-                        <option id="year-level" value="">Select Year Level</option>
-                        <option value="shs">Senior High School</option>
-                        <option value="college">College</option>
-                    </select>
-                    <br>
-                    <label for="courses">Courses:</label>
-                    <select id="courses" required>
-                        <option value="">Select Course</option>
-                    </select>
-                    <br><br>
-                    <button type="submit" id="submitButton" disabled>Submit</button><br><br>
-                    <p id="errorMessage" style="display:none;color:red;">Please fill out all fields.</p>
-                </form>
-            </div>
-        </section>
-    </main>
-    <script type="module" src="./JavaScript/firebase.js"></script>
-    <script type="module" src="./JavaScript/index.js"></script>
-</body>
-</html>
+                <h2>iACADEMY Welcome Kit</h2>
+                <div class="user-info">
+                    <form id="nameForm">
+                        <label for="nameInput"></label>
+                        <input placeholder="Enter Your Name" type="text" id="nameInput" name="nameInput" required><br>
+                        <br>
+                        <label for="yearLevel">Year Level:</label>
+                        <select id="yearLevel" required>
+                            <option id="year-level" value="">Select Year Level</option>
+                            <option value="shs">Senior High School</option>
+                            <option value="college">College</option>
+                        </select>
+                        <br>
+                        <label for="courses">Courses:</label>
+                        <select id="courses" required>
+                            <option value="">Select Course</option>
+                        </select>
+                        <br><br>
+                        <button type="submit" id="submitButton" disabled>Submit</button><br><br>
+                        <p id="errorMessage" style="display:none;color:red;">Please fill out all fields.</p>
+                    </form>
+                </div>
+            </section>
+        </main>
+        <script type="module" src="./JavaScript/firebase.js"></script>
+        <script type="module" src="./JavaScript/index.js"></script>
+    </body>
+    </html>
